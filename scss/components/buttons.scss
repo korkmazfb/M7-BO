@@ -8,6 +8,18 @@
     padding: 2rem 5rem;
     border-radius: 8%;
     border: none;
+    transition: 0.2s;
+
+    &:hover{
+        font-size: 2.08rem;
+        color: colors.$text_white;
+        background: colors.$light_purple ;
+        width: max-content;
+        padding: 2rem 5rem;
+        border-radius: 8%;
+        border: none;
+
+    }
 }
 
 @mixin Secondary_Default{
@@ -18,25 +30,17 @@
     width: max-content;
     padding: 2rem 5rem;
     border-radius: 8%;
-}
-
-@mixin Primairy_Hover{
-    font-size: 2.08rem;
-    color: colors.$text_white;
-    background: colors.$light_purple ;
-    width: max-content;
-    padding: 2rem 5rem;
-    border-radius: 8%;
-    border: none;
-}
-
-@mixin Primairy_Default{
-    font-size: 2.08rem;
-    color: colors.$light_purple;
-    background: colors.$text_white ;
-    border: 0.5rem solid colors.$light_purple;
-    width: max-content;
-    padding: 2rem 5rem;
-    border-radius: 8%;
-    filter: grayscale(30%);
+    transition: 0.2s;
+    
+    &:hover{
+        font-size: 2.08rem;
+        color: colors.$light_purple;
+        background: colors.$text_white ;
+        border: 0.5rem solid colors.$light_purple;
+        width: max-content;
+        padding: 2rem 5rem;
+        border-radius: 8%;
+        filter: grayscale(30%);
+    
+    }
 }
