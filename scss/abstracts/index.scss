@@ -1,0 +1,6 @@
+@use "../components/colors";
+@use "../components/buttons.scss";
+
+.index__button{
+    @include buttons.Primairy_Default;
+}

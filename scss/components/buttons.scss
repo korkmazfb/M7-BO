@@ -1,0 +1,42 @@
+@use"./colors.scss";
+
+@mixin Primairy_Default{
+    font-size: 2.08rem;
+    color: colors.$text_white;
+    background: colors.$dark_purple ;
+    width: max-content;
+    padding: 2rem 5rem;
+    border-radius: 8%;
+    border: none;
+}
+
+@mixin Secondary_Default{
+    font-size: 2.08rem;
+    color: colors.$dark_purple;
+    background: colors.$text_white ;
+    border: 0.5rem solid colors.$dark_purple;
+    width: max-content;
+    padding: 2rem 5rem;
+    border-radius: 8%;
+}
+
+@mixin Primairy_Hover{
+    font-size: 2.08rem;
+    color: colors.$text_white;
+    background: colors.$light_purple ;
+    width: max-content;
+    padding: 2rem 5rem;
+    border-radius: 8%;
+    border: none;
+}
+
+@mixin Primairy_Default{
+    font-size: 2.08rem;
+    color: colors.$light_purple;
+    background: colors.$text_white ;
+    border: 0.5rem solid colors.$light_purple;
+    width: max-content;
+    padding: 2rem 5rem;
+    border-radius: 8%;
+    filter: grayscale(30%);
+}

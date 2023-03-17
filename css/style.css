@@ -1,0 +1,35 @@
+*, *::before, ::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background: #eee;
+  font-family: "Playfair Display", serif;
+  color: #1D1D1D;
+}
+
+h1 {
+  font-size: 6.4rem;
+  font-weight: 600;
+}
+
+.index__button {
+  font-size: 2.08rem;
+  color: #604D8A;
+  background: #FFFFFF;
+  border: 0.5rem solid #604D8A;
+  width: max-content;
+  padding: 2rem 5rem;
+  border-radius: 8%;
+  filter: grayscale(30%);
+}
+
+/*# sourceMappingURL=style.css.map */
