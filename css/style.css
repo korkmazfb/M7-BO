@@ -23,13 +23,22 @@ h1 {
 
 .index__button {
   font-size: 2.08rem;
-  color: #604D8A;
-  background: #FFFFFF;
-  border: 0.5rem solid #604D8A;
+  color: #FFFFFF;
+  background: #462f79;
   width: max-content;
   padding: 2rem 5rem;
   border-radius: 8%;
-  filter: grayscale(30%);
+  border: none;
+  transition: 0.2s;
+}
+.index__button:hover {
+  font-size: 2.08rem;
+  color: #FFFFFF;
+  background: #604D8A;
+  width: max-content;
+  padding: 2rem 5rem;
+  border-radius: 8%;
+  border: none;
 }
 
 /*# sourceMappingURL=style.css.map */
