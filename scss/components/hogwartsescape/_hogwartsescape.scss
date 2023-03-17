@@ -1,0 +1,33 @@
+
+@use "../../abstracts/animations.scss";
+@use "../../abstracts/colors.scss";
+@use "../../abstracts/mixins.scss";
+
+.hogwartsEscape{
+    background: linear-gradient(to bottom right, colors.$dark_purple_low_opacity ,colors.$light_purple_low_opacity), url(/img/hogwartsmainpicture.webp);
+    background-size: cover;
+    background-position: bottom;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5rem;
+   
+
+    &__title{
+        font-size: 9rem;
+        color: colors.$text_white;
+        animation-name: popup;
+        animation-duration: 0.6s;
+    }
+
+    &__button{
+        @include  mixins.Primairy_Default;
+        animation-name: popup;
+        animation-duration: 0.6s;
+    }
+
+   
+    
+}

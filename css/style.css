@@ -21,7 +21,32 @@ h1 {
   font-weight: 600;
 }
 
-.index__button {
+@keyframes popup {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.hogwartsEscape {
+  background: linear-gradient(to bottom right, rgba(70, 47, 121, 0.4), rgba(96, 77, 138, 0.4)), url(/img/hogwartsmainpicture.webp);
+  background-size: cover;
+  background-position: bottom;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5rem;
+}
+.hogwartsEscape__title {
+  font-size: 9rem;
+  color: #FFFFFF;
+  animation-name: popup;
+  animation-duration: 0.6s;
+}
+.hogwartsEscape__button {
   font-size: 2.08rem;
   color: #FFFFFF;
   background: #462f79;
@@ -30,8 +55,11 @@ h1 {
   border-radius: 8%;
   border: none;
   transition: 0.2s;
+  cursor: pointer;
+  animation-name: popup;
+  animation-duration: 0.6s;
 }
-.index__button:hover {
+.hogwartsEscape__button:hover {
   font-size: 2.08rem;
   color: #FFFFFF;
   background: #604D8A;
