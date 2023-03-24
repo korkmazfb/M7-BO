@@ -1,0 +1,7 @@
+@use "../../abstracts/colors.scss";
+
+.avatar{
+    background:linear-gradient(to bottom right, colors.$dark_purple,colors.$light_purple) ;
+    width: 100%;
+    min-height: 100vh;
+}
