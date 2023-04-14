@@ -4,4 +4,131 @@
     background:linear-gradient(to bottom right, colors.$dark_purple,colors.$light_purple) ;
     width: 100%;
     min-height: 100vh;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    width: 150rem;
+
+    &__left--side{
+        background-color: red;
+    }
+
+   
+
+
+    
+
+
+    &__wrappersave{
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin-left: 20rem;
+      
+    }
+
+
+
+
+    &__name{
+        margin-top: 4rem;
+       
+        font-size: 2.5rem;
+        border-radius: 0.5rem;
+        width: 20rem;
+    }
+
+
+    &__hat{
+        margin-top: 6rem;
+        width: 15rem;
+        border-bottom: 15rem solid #fff  ;
+        border-right: 8rem solid transparent;
+        border-left: 8rem solid transparent;
+        z-index: 1;
+       
+        
+        
+    }
+
+    &__head{
+
+        width: 16rem;
+        aspect-ratio: 1/1;
+        background:#F2E3DB;
+        border-radius: 50%;
+        position: relative;
+        z-index: 0;
+        top: -5rem;
+       
+
+    }
+
+    &__eye{
+        position: absolute;
+        display: flex;
+        background: #393646;
+        border-radius: 50%;
+        width: 1rem;
+        aspect-ratio: 1/1;
+        bottom: 9rem;
+
+        &--left{
+            left: 4rem;
+
+        }
+
+        &--right{
+            left: 10rem;
+        }
+        
+    }
+
+    &__right--side{
+        background-color: aqua;
+        display: flex;
+        justify-content: center;
+        padding: 4rem;
+        flex-direction: column;
+        align-items: center;
+        gap: 4rem;
+    }
+
+    &__h2{
+        font-size: 2rem;
+
+    }
+
+    &__colorhats{
+        display: flex;
+        gap: 7rem;
+        margin: 2rem;
+
+    }
+
+
+    &__colorhat{
+        width: 4rem;
+        height: 4rem;
+        background-color: beige;
+        gap: 7rem;
+        display: flex;
+        flex-direction: column;
+        border-radius: 0.3rem;
+    }
+    
+
+   
+
+}
+
+
+
+.save{
+    width: 20rem;
+
+    &:hover{
+        cursor: pointer;
+
+    }
+
 }

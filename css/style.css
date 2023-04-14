@@ -95,6 +95,89 @@ h1 {
   background: linear-gradient(to bottom right, #462f79, #604D8A);
   width: 100%;
   min-height: 100vh;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  width: 150rem;
+}
+.avatar__left--side {
+  background-color: red;
+}
+.avatar__wrappersave {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  margin-left: 20rem;
+}
+.avatar__name {
+  margin-top: 4rem;
+  font-size: 2.5rem;
+  border-radius: 0.5rem;
+  width: 20rem;
+}
+.avatar__hat {
+  margin-top: 6rem;
+  width: 15rem;
+  border-bottom: 15rem solid #fff;
+  border-right: 8rem solid transparent;
+  border-left: 8rem solid transparent;
+  z-index: 1;
+}
+.avatar__head {
+  width: 16rem;
+  aspect-ratio: 1/1;
+  background: #F2E3DB;
+  border-radius: 50%;
+  position: relative;
+  z-index: 0;
+  top: -5rem;
+}
+.avatar__eye {
+  position: absolute;
+  display: flex;
+  background: #393646;
+  border-radius: 50%;
+  width: 1rem;
+  aspect-ratio: 1/1;
+  bottom: 9rem;
+}
+.avatar__eye--left {
+  left: 4rem;
+}
+.avatar__eye--right {
+  left: 10rem;
+}
+.avatar__right--side {
+  background-color: aqua;
+  display: flex;
+  justify-content: center;
+  padding: 4rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+}
+.avatar__h2 {
+  font-size: 2rem;
+}
+.avatar__colorhats {
+  display: flex;
+  gap: 7rem;
+  margin: 2rem;
+}
+.avatar__colorhat {
+  width: 4rem;
+  height: 4rem;
+  background-color: beige;
+  gap: 7rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.3rem;
+}
+
+.save {
+  width: 20rem;
+}
+.save:hover {
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=style.css.map */
