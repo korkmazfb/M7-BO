@@ -47,17 +47,18 @@ class Header {
 }
 
 class Bankymain {
-    placeToRenderBankyMain;
+    placeToRenderQuiz;
     bottomSection;
     topSection;
-    constructor(placeToRenderBankyMain) {
-
-        this.placeToRenderBankyMain = document.getElementsByTagName(placeToRenderBankyMain)[0];
+    punten;
+    constructor(placeToRenderQuiz,punten) {
+        this.punten = punten;
+        this.placeToRenderQuiz = document.getElementsByTagName(placeToRenderQuiz)[0];
 
         this.mainElement = document.createElement("main");
         this.mainElement.classList = "quiz";
 
-        this.bottomSection = new BankybottomSection(this.mainElement);
+        this.bottomSection = new BankybottomSection(this.mainElement,this.punten);
         this.topSection = new BankytopSection(this.mainElement, this);
 
     }
@@ -75,7 +76,7 @@ class Bankymain {
     }
 
     render() {
-        this.placeToRenderBankyMain.appendChild(this.mainElement);
+        this.placeToRenderQuiz.appendChild(this.mainElement);
         //left
         this.bottomSection.render();
         //right
@@ -87,7 +88,9 @@ class Bankymain {
 
 class BankybottomSection {
     mainElement;
-    constructor(mainElement) {
+    punten;
+    constructor(mainElement, punten) {
+        this.punten = punten;
         this.mainElement = mainElement;
 
         this.sectionBottom = document.createElement("section");
@@ -114,11 +117,6 @@ class BankybottomSection {
 
     makeQuizFromData(accountToShow, data) {
 
-        let totalpoints = 0;
-        for (let i = 0; i < data[accountToShow].length; i++) {
-            totalpoints += data[accountToShow][i]["punten"];
-        }
-        console.log(totalpoints);
 
 
         //empty ul before makeing li
@@ -136,7 +134,7 @@ class BankybottomSection {
 
             this.antwoordButton = document.createElement("button")
             this.antwoordButton.classList = data[accountToShow][i]["extra_class"];
-            this.antwoordButton.onclick = this.antwoordOnclick;
+            this.antwoordButton.onclick = () => this.antwoordOnclick(data[accountToShow][i]);
 
 
             this.transactionAmount = document.createElement("h3");
@@ -155,10 +153,14 @@ class BankybottomSection {
             this.Transaction.appendChild(this.transactionName);
             this.Transaction.appendChild(this.antwoordButton);
             this.antwoordButton.appendChild(this.transactionAmount);
-            
+
             this.figureElement.appendChild(this.bankyLogoElement);
 
         }
+    }
+
+    antwoordOnclick = (data) => {
+        this.punten.addPoints(data.punten);
     }
 
 
@@ -197,7 +199,7 @@ class BankytopSection {
             this.account = document.createElement("li");
             this.account.classList = "quiz__account";
             this.account.onclick = () => {
-                this.bankymain.callFromtopSection(entry[0],data);
+                this.bankymain.callFromtopSection(entry[0], data);
             }
 
             this.bankySwitchButton = document.createElement("button");
@@ -207,7 +209,7 @@ class BankytopSection {
             this.accountFigure.classList = "quiz__logo";
 
             this.accountLogo = document.createElement("i");
-            this.accountLogo.classList = "fa-solid fa-piggy-bank";
+            this.accountLogo.classList = entry[1][0]["logo"];
 
 
             this.accountName = document.createElement("h4");
@@ -231,14 +233,26 @@ class BankytopSection {
 
 }
 
+class Punten{
+    punten = 0;
+    
+    addPoints(optellen) {
+        this.punten = this.punten + optellen;
+        console.log(this.punten);
+    }
+}
+
 class App {
     Header;
     Bankymain;
     GetDataFromApi;
+    punten;
 
     constructor() {
         this.header = new Header("body")
-        this.Bankymain = new Bankymain("body");
+
+        this.punten = new Punten();
+        this.Bankymain = new Bankymain("body",this.punten);
 
         this.GetDataFromApi = new GetDataFromApi("../json/quiz.json");
 
@@ -254,6 +268,8 @@ class App {
         this.header.render();
         this.Bankymain.render();
     }
+
+
 }
 
 const app = new App();

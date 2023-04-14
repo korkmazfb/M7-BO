@@ -23,7 +23,7 @@
             "vraag": "",
             "antwoord": "Runner",
             "extra_class": "quiz__antwoordButton",
-            "punten": 5
+            "punten": 50
         },
         {
             "vraag": "",
