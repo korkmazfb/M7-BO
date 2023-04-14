@@ -5,8 +5,10 @@
     color: colors.$text_white;
     background: colors.$dark_purple ;
     width: max-content;
-    padding: 2rem 5rem;
-    border-radius: 8%;
+    min-width: 25rem;
+    max-width: 27rem;
+    padding: 2rem ;
+    border-radius: 0.75rem;
     border: none;
     transition: 0.2s;
     cursor: pointer;
@@ -16,8 +18,8 @@
         color: colors.$text_white;
         background: colors.$light_purple ;
         width: max-content;
-        padding: 2rem 5rem;
-        border-radius: 8%;
+        padding: 2rem;
+        border-radius: 0.75rem;
         border: none;
 
     }
@@ -30,7 +32,7 @@
     border: 0.5rem solid colors.$dark_purple;
     width: max-content;
     padding: 2rem 5rem;
-    border-radius: 8%;
+    border-radius: 0.75rem;
     transition: 0.2s;
     
     &:hover{
@@ -40,7 +42,7 @@
         border: 0.5rem solid colors.$light_purple;
         width: max-content;
         padding: 2rem 5rem;
-        border-radius: 8%;
+        border-radius: 0.75rem;
         filter: grayscale(30%);
     
     }

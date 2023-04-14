@@ -1,0 +1,179 @@
+@use "../../abstracts/vars.scss";
+@use "../../abstracts/colors.scss";
+@use "../../abstracts/mixins.scss";
+
+.quiz {
+    background: white;
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 4rem;
+    max-width: 150rem;
+    width: 100%;
+    border-bottom-left-radius: 5rem;
+    border-bottom-right-radius: 5rem;
+    min-height: calc(100vh - map-get(vars.$vhCalc, "heightOfHeader") - map-get(vars.$vhCalc, "paddingOfBody"));
+
+
+    &__section {
+
+        display: flex;
+
+        &--left {
+            flex-direction: column;
+            position: relative;
+            align-items: center;
+        }
+
+
+    }
+
+    &__header {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        justify-content: space-between;
+
+        &>div {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+    }
+
+
+    &__money {
+        font-weight: 400;
+        font-size: 250%;
+    }
+
+    &__logo {
+        border-radius: 50%;
+        font-size: 3rem;
+        width: 5rem;
+        height: 5rem;
+        background: colors.$dark_purple;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        box-shadow: vars.$box-shadow;
+    }
+
+    &__number{
+        position: absolute;
+        top: 0 ;
+        left: 0;
+    }
+
+    &__eye {
+        border-radius: 50%;
+        font-size: 2rem;
+        width: 3rem;
+        height: 3rem;
+        background: colors.$dark_purple;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        box-shadow: vars.$box-shadow;
+    }
+
+    &__transactions {
+        padding: 2rem;
+        list-style: none;
+        padding-top: 5rem;
+        display: flex;
+        gap: 2rem;
+        height: 100%;
+        overflow: hidden;
+        flex-wrap: wrap;
+        width: 60rem;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    &__transaction {
+        display: flex;
+        align-items: center;
+        font-size: 120%;
+        justify-content: center;
+        position: relative;
+        padding-bottom: 0.5rem;
+
+
+
+
+    }
+
+    &__vraag {
+        font-weight: 600;
+        font-size: 400%;
+    }
+
+    &__geenButton{
+        display: none;
+    }
+
+    &__antwoordButton {
+        @include mixins.Primairy_Default;
+
+        &--onclick {
+            @include mixins.Secondary_Default;
+        }
+
+    }
+
+    &__amount {
+        font-weight: 300;
+        font-size: 120%;
+    }
+
+    &__transferButton {
+        background: colors.$dark_purple;
+        font-size: 100%;
+        border: none;
+        padding: 1rem;
+        margin-top: 2rem;
+        color: white;
+        border-radius: 0.5rem;
+        box-shadow: vars.$box-shadow;
+        transition: 0.4s all;
+
+        &:hover {
+            cursor: pointer;
+            background: white;
+            color: colors.$text_black;
+            box-shadow: inset 0 0 0 0.2rem colors.$dark_purple;
+
+
+        }
+
+    }
+
+    &__switchAccount {
+        background: none;
+        border: none;
+    }
+
+    &__accounts {
+        list-style: none;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        width: 100%;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    &__account {
+        display: flex;
+        align-items: center;
+    }
+
+    &__nameOfAccount {
+        font-weight: 400;
+    }
+
+
+}

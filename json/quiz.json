@@ -1,0 +1,200 @@
+{
+    "vraag 1": [
+        {
+            "logo": "fa-solid fa-1",
+            "vraag": "Welke positie speelde Harry in de Gryffindor Quidditch team",
+            "antwoord": "",
+            "extra_class": "quiz__geenButton",
+            "punten": 0
+        },
+        {
+            "vraag": "",
+            "antwoord": "Seeker",
+            "extra_class": "quiz__antwoordButton",
+            "punten": 5
+        },
+        {
+            "vraag": "",
+            "antwoord": "Striker",
+            "extra_class": "quiz__antwoordButton",
+            "punten": 5
+        },
+        {
+            "vraag": "",
+            "antwoord": "Runner",
+            "extra_class": "quiz__antwoordButton",
+            "punten": 5
+        },
+        {
+            "vraag": "",
+            "antwoord": "Hij speelde niet",
+            "extra_class": "quiz__antwoordButton",
+            "punten": 5
+        }
+    ],
+    "vraag 2": [
+        {
+            "logo": "fa-solid fa-2",
+            "vraag": "Wie maakt wetten voor de magische wereld?",
+            "antwoord": "",
+            "extra_class": "quiz__geenButton",
+            "punten": 0
+        },
+        {
+            "vraag": "",
+            "antwoord": "Hagrid",
+            "extra_class": "quiz__antwoordButton",
+            "punten": 5
+        },
+        {
+            "vraag": "",
+            "antwoord": "God",
+            "extra_class": "quiz__antwoordButton",
+            "punten": 5
+        },
+        {
+            "vraag": "",
+            "antwoord": "Het Ministerie van Toverkunst",
+            "extra_class": "quiz__antwoordButton",
+            "punten": 5
+        },
+        {
+            "vraag": "",
+            "antwoord": "Voldemort",
+            "extra_class": "quiz__antwoordButton",
+            "punten": 5
+        }
+    ],
+    "vraag 3": [
+        {
+            "logo": "fa-solid fa-3",
+            "vraag": "Hoe noemen de leerlingen de geest van gryffindor?",
+            "antwoord": "",
+            "extra_class": "quiz__geenButton",
+            "punten": 0
+        },
+        {
+            "vraag": "",
+            "antwoord": "Professor McGonagall",
+            "extra_class": "quiz__antwoordButton",
+            "punten": 5
+        },
+        {
+            "vraag": "",
+            "antwoord": "Moaning Myrtle",
+            "extra_class": "quiz__antwoordButton",
+            "punten": 5
+        },
+        {
+            "vraag": "",
+            "antwoord": "Bijna onthoofde Nick",
+            "extra_class": "quiz__antwoordButton",
+            "punten": 5
+        },
+        {
+            "vraag": "",
+            "antwoord": "Peeves",
+            "extra_class": "quiz__antwoordButton",
+            "punten": 5
+        }
+    ],
+    "vraag 4": [
+        {
+            "logo": "fa-solid fa-4",
+            "vraag": "Wat is de volledige, echte naam van Heer Voldemort?",
+            "antwoord": "",
+            "extra_class": "quiz__geenButton",
+            "punten":0
+        },
+        {
+            "vraag": "",
+            "antwoord": "Tom Marvolo Riddle",
+            "extra_class": "quiz__antwoordButton",
+            "punten": 5
+        },
+        {
+            "vraag": "",
+            "antwoord": "Hedwig",
+            "extra_class": "quiz__antwoordButton",
+            "punten": 5
+        },
+        {
+            "vraag": "",
+            "antwoord": "Draco Malfoy",
+            "extra_class": "quiz__antwoordButton",
+            "punten": 5
+        },
+        {
+            "vraag": "",
+            "antwoord": "Viktor Krum",
+            "extra_class": "quiz__antwoordButton",
+            "punten": 5
+        }
+    ],
+    "vraag 5": [
+        {
+            "logo": "fa-solid fa-5",
+            "vraag": "Hoe weert men een Dementor af?",
+            "antwoord": "",
+            "extra_class": "quiz__geenButton",
+            "punten":0
+        },
+        {
+            "vraag": "",
+            "antwoord": "Gobstones",
+            "extra_class": "quiz__antwoordButton",
+            "punten": 5
+        },
+        {
+            "vraag": "",
+            "antwoord": "The Patronus Charm",
+            "extra_class": "quiz__antwoordButton",
+            "punten": 5
+        },
+        {
+            "vraag": "",
+            "antwoord": "Een feniksveer",
+            "extra_class": "quiz__antwoordButton",
+            "punten": 5
+        },
+        {
+            "vraag": "",
+            "antwoord": "Boterbier",
+            "extra_class": "quiz__antwoordButton",
+            "punten": 5
+        }
+    ],
+    "vraag 6": [
+        {
+            "logo": "fa-solid fa-6",
+            "vraag": "Waar worden de kluizen bewaard in Goudgrijp Bank?",
+            "antwoord": "",
+            "extra_class": "quiz__geenButton",
+            "punten": 0
+        },
+        {
+            "vraag": "",
+            "antwoord": "Een tunnel die naar de Shrieking Shack leidt",
+            "extra_class": "quiz__antwoordButton",
+            "punten": 5
+        },
+        {
+            "vraag": "",
+            "antwoord": "Platform 9 en 3/4 ",
+            "extra_class": "quiz__antwoordButton",
+            "punten": 5
+        },
+        {
+            "vraag": "",
+            "antwoord": "In de meisjesbadkamer op de tweede verdieping",
+            "extra_class": "quiz__antwoordButton",
+            "punten": 5
+        },
+        {
+            "vraag": "",
+            "antwoord": "Diep ondergronds",
+            "extra_class": "quiz__antwoordButton",
+            "punten": 5
+        }
+    ]
+}
