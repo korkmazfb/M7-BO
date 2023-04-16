@@ -9,8 +9,6 @@
     padding: 4rem;
     max-width: 150rem;
     width: 100%;
-    border-bottom-left-radius: 5rem;
-    border-bottom-right-radius: 5rem;
     min-height: calc(100vh - map-get(vars.$vhCalc, "heightOfHeader") - map-get(vars.$vhCalc, "paddingOfBody"));
 
 

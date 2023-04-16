@@ -57,9 +57,10 @@ class Quizmain {
 
         this.mainElement = document.createElement("main");
         this.mainElement.classList = "quiz";
-
-        this.bottomSection = new QuizbottomSection(this.mainElement, this.punten);
+        
         this.topSection = new QuiztopSection(this.mainElement, this);
+        this.bottomSection = new QuizbottomSection(this.mainElement, this.punten);
+
 
     }
 
@@ -87,112 +88,6 @@ class Quizmain {
 
     }
 
-
-}
-
-class QuizbottomSection {
-    mainElement;
-    punten;
-    constructor(mainElement, punten) {
-        this.punten = punten;
-        this.mainElement = mainElement;
-
-        this.sectionBottom = document.createElement("section");
-        this.sectionBottom.classList = "quiz__section quiz__section--left";
-
-        this.headerElement = document.createElement("header");
-        this.headerElement.classList = "quiz__header";
-
-        this.divElement = document.createElement("div");
-
-        this.figureElement = document.createElement("figure");
-        this.figureElement.classList = "quiz__logo quiz__number";
-
-
-
-
-        this.Transactions = document.createElement("ul")
-        this.Transactions.classList = "quiz__transactions";
-
-        this.volgendePaginaLink = document.createElement("a");
-        this.volgendePaginaLink.classList = "quiz__volgendeLink";
-        this.volgendePaginaLink.href = "./index.html";
-
-
-    }
-
-
-
-    makeQuizFromData(accountToShow, data) {
-
-
-
-        //empty ul before makeing li
-        this.Transactions.innerHTML = "";
-        this.figureElement.innerHTML = "";
-        this.volgendePaginaLink.innerHTML = "";
-
-        for (let i = 0; i < data[accountToShow].length; i++) {
-
-            this.Transaction = document.createElement("li");
-            this.Transaction.classList = ("quiz__transaction");
-
-            this.transactionName = document.createElement("h2");
-            this.transactionName.classList = "quiz__vraag";
-            this.transactionName.innerText = data[accountToShow][i]["vraag"];
-
-            this.antwoordButton = document.createElement("button")
-            this.antwoordButton.classList = data[accountToShow][i]["extra_class"];
-            this.antwoordButton.onclick = () => this.antwoordOnclick(data[accountToShow][i]);
-
-            this.transactionAmount = document.createElement("h3");
-            this.transactionAmount.classList = "quiz__amount";
-            this.transactionAmount.innerText = data[accountToShow][i]["antwoord"];
-
-
-            this.quizLogoElement = document.createElement("i");
-            this.quizLogoElement.classList = data[accountToShow][i]["logo"];
-
-            this.volgendePaginaButton = document.createElement("button");
-            this.volgendePaginaButton.classList = data[accountToShow][i]["volgdendepagina"];
-            this.volgendePaginaButton.innerText = ">";
-            
-
-
-
-
-
-            
-
-
-            this.Transactions.appendChild(this.Transaction);
-            this.Transaction.appendChild(this.transactionName);
-            this.Transaction.appendChild(this.antwoordButton);
-            this.antwoordButton.appendChild(this.transactionAmount);
-
-            this.figureElement.appendChild(this.quizLogoElement);
-
-            this.volgendePaginaLink.appendChild(this.volgendePaginaButton);
-
-
-        }
-    }
-
-    antwoordOnclick = (data) => {
-        this.punten.addPoints(data.punten);
-    }
-
-
-
-
-    render() {
-        this.mainElement.appendChild(this.sectionBottom);
-        this.sectionBottom.appendChild(this.headerElement);
-        this.headerElement.appendChild(this.figureElement);
-        this.sectionBottom.appendChild(this.Transactions);
-        this.sectionBottom.appendChild(this.volgendePaginaLink);
-
-    }
 
 }
 
@@ -252,6 +147,135 @@ class QuiztopSection {
     }
 
 }
+
+
+class QuizbottomSection {
+    mainElement;
+    punten;
+    constructor(mainElement, punten) {
+        this.punten = punten;
+        this.mainElement = mainElement;
+
+        this.sectionBottom = document.createElement("section");
+        this.sectionBottom.classList = "quiz__section quiz__section--left";
+
+        this.headerElement = document.createElement("header");
+        this.headerElement.classList = "quiz__header";
+
+        this.divElement = document.createElement("div");
+
+        this.figureElement = document.createElement("figure");
+        this.figureElement.classList = "quiz__logo quiz__number";
+
+
+
+
+        this.Transactions = document.createElement("ul")
+        this.Transactions.classList = "quiz__transactions";
+
+        this.volgendePaginaLink = document.createElement("a");
+        this.volgendePaginaLink.classList = "quiz__volgendeLink";
+        //this.volgendePaginaLink.href = "./index.html";
+
+
+    }
+
+
+
+    makeQuizFromData(accountToShow, data) {
+
+
+
+        //empty ul before makeing li
+        this.Transactions.innerHTML = "";
+        this.figureElement.innerHTML = "";
+        this.volgendePaginaLink.innerHTML = "";
+
+        for (let i = 0; i < data[accountToShow].length; i++) {
+
+            this.Transaction = document.createElement("li");
+            this.Transaction.classList = ("quiz__transaction");
+
+            this.transactionName = document.createElement("h2");
+            this.transactionName.classList = "quiz__vraag";
+            this.transactionName.innerText = data[accountToShow][i]["vraag"];
+
+            this.antwoordButton = document.createElement("button")
+            this.antwoordButton.classList = data[accountToShow][i]["extra_class"];
+            this.antwoordButton.onclick = () => this.antwoordOnclick(data[accountToShow][i]);
+
+            this.transactionAmount = document.createElement("h3");
+            this.transactionAmount.classList = "quiz__amount";
+            this.transactionAmount.innerText = data[accountToShow][i]["antwoord"];
+
+
+            this.quizLogoElement = document.createElement("i");
+            this.quizLogoElement.classList = data[accountToShow][i]["logo"];
+
+            this.volgendePaginaButton = document.createElement("button");
+            this.volgendePaginaButton.classList = data[accountToShow][i]["volgdendepagina"];
+            this.volgendePaginaButton.innerText = ">";
+            this.volgendePaginaButton.onclick = () => this.volgendeButtonOnclick();
+
+
+
+
+
+
+
+
+
+            this.Transactions.appendChild(this.Transaction);
+            this.Transaction.appendChild(this.transactionName);
+            this.Transaction.appendChild(this.antwoordButton);
+            this.antwoordButton.appendChild(this.transactionAmount);
+
+            this.figureElement.appendChild(this.quizLogoElement);
+
+            this.volgendePaginaLink.appendChild(this.volgendePaginaButton);
+
+
+        }
+    }
+
+    antwoordOnclick = (data) => {
+        this.punten.addPoints(data.punten);
+    }
+    
+    volgendeButtonOnclick = () => {
+
+        if (this.punten = 0,5) {
+            console.log("ik ben in Hufflepuff");
+        }
+        else if (this.punten = 15,20) {
+            console.log("ik ben in Slytherin");
+        }
+        else if (this.punten = 10,25) {
+            console.log("ik ben in Ravenclaw");
+        }
+        else {
+            console.log("ik ben Gryffindor");
+        }
+
+    }
+
+
+
+
+
+
+    render() {
+        this.mainElement.appendChild(this.sectionBottom);
+        this.sectionBottom.appendChild(this.headerElement);
+        this.headerElement.appendChild(this.figureElement);
+        this.sectionBottom.appendChild(this.Transactions);
+        this.sectionBottom.appendChild(this.volgendePaginaLink);
+
+    }
+
+}
+
+
 
 class Punten {
     punten = 0;
