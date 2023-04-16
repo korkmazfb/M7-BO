@@ -46,20 +46,20 @@ class Header {
     }
 }
 
-class Bankymain {
+class Quizmain {
     placeToRenderQuiz;
     bottomSection;
     topSection;
     punten;
-    constructor(placeToRenderQuiz,punten) {
+    constructor(placeToRenderQuiz, punten) {
         this.punten = punten;
         this.placeToRenderQuiz = document.getElementsByTagName(placeToRenderQuiz)[0];
 
         this.mainElement = document.createElement("main");
         this.mainElement.classList = "quiz";
 
-        this.bottomSection = new BankybottomSection(this.mainElement,this.punten);
-        this.topSection = new BankytopSection(this.mainElement, this);
+        this.bottomSection = new QuizbottomSection(this.mainElement, this.punten);
+        this.topSection = new QuiztopSection(this.mainElement, this);
 
     }
 
@@ -69,7 +69,9 @@ class Bankymain {
 
     makeQuizFromData(data) {
         this.bottomSection.makeQuizFromData(Object.entries(data)[0][0], data);
+        console.log(Object.entries(data)[5][0]);
     }
+
 
     callFromtopSection(account, data) {
         this.bottomSection.makeQuizFromData(account, data)
@@ -84,9 +86,11 @@ class Bankymain {
 
 
     }
+
+
 }
 
-class BankybottomSection {
+class QuizbottomSection {
     mainElement;
     punten;
     constructor(mainElement, punten) {
@@ -110,6 +114,10 @@ class BankybottomSection {
         this.Transactions = document.createElement("ul")
         this.Transactions.classList = "quiz__transactions";
 
+        this.volgendePaginaLink = document.createElement("a");
+        this.volgendePaginaLink.classList = "quiz__volgendeLink";
+        this.volgendePaginaLink.href = "./index.html";
+
 
     }
 
@@ -122,6 +130,7 @@ class BankybottomSection {
         //empty ul before makeing li
         this.Transactions.innerHTML = "";
         this.figureElement.innerHTML = "";
+        this.volgendePaginaLink.innerHTML = "";
 
         for (let i = 0; i < data[accountToShow].length; i++) {
 
@@ -136,17 +145,24 @@ class BankybottomSection {
             this.antwoordButton.classList = data[accountToShow][i]["extra_class"];
             this.antwoordButton.onclick = () => this.antwoordOnclick(data[accountToShow][i]);
 
-
             this.transactionAmount = document.createElement("h3");
             this.transactionAmount.classList = "quiz__amount";
             this.transactionAmount.innerText = data[accountToShow][i]["antwoord"];
 
 
+            this.quizLogoElement = document.createElement("i");
+            this.quizLogoElement.classList = data[accountToShow][i]["logo"];
+
+            this.volgendePaginaButton = document.createElement("button");
+            this.volgendePaginaButton.classList = data[accountToShow][i]["volgdendepagina"];
+            this.volgendePaginaButton.innerText = ">";
+            
 
 
-            this.bankyLogoElement = document.createElement("i");
-            this.bankyLogoElement.classList = data[accountToShow][i]["logo"];
 
+
+
+            
 
 
             this.Transactions.appendChild(this.Transaction);
@@ -154,7 +170,10 @@ class BankybottomSection {
             this.Transaction.appendChild(this.antwoordButton);
             this.antwoordButton.appendChild(this.transactionAmount);
 
-            this.figureElement.appendChild(this.bankyLogoElement);
+            this.figureElement.appendChild(this.quizLogoElement);
+
+            this.volgendePaginaLink.appendChild(this.volgendePaginaButton);
+
 
         }
     }
@@ -164,30 +183,32 @@ class BankybottomSection {
     }
 
 
+
+
     render() {
         this.mainElement.appendChild(this.sectionBottom);
         this.sectionBottom.appendChild(this.headerElement);
         this.headerElement.appendChild(this.figureElement);
         this.sectionBottom.appendChild(this.Transactions);
-
+        this.sectionBottom.appendChild(this.volgendePaginaLink);
 
     }
 
 }
 
-class BankytopSection {
+class QuiztopSection {
     mainElement;
-    bankymain;
+    quizmain;
 
-    constructor(mainElement, bankymain) {
+    constructor(mainElement, quizmain) {
         this.mainElement = mainElement;
-        this.bankymain = bankymain;
+        this.quizmain = quizmain;
 
         this.sectionTop = document.createElement("section");
         this.sectionTop.classList = "quiz__section quiz__section--right";
 
-        this.accounts = document.createElement("ul");
-        this.accounts.classList = "quiz__accounts";
+        this.vragen = document.createElement("ul");
+        this.vragen.classList = "quiz__vragen";
 
 
     }
@@ -196,46 +217,45 @@ class BankytopSection {
         Object.entries(data).forEach((entry) => {
 
 
-            this.account = document.createElement("li");
-            this.account.classList = "quiz__account";
-            this.account.onclick = () => {
-                this.bankymain.callFromtopSection(entry[0], data);
+            this.vraag = document.createElement("li");
+            this.vraag.classList = "quiz__account";
+            this.vraag.onclick = () => {
+                this.quizmain.callFromtopSection(entry[0], data);
+                console.log(entry[1]);
             }
 
-            this.bankySwitchButton = document.createElement("button");
-            this.bankySwitchButton.classList = "quiz__switchAccount";
+            this.quizSwitchButton = document.createElement("button");
+            this.quizSwitchButton.classList = "quiz__switchAccount";
 
-            this.accountFigure = document.createElement("figure");
-            this.accountFigure.classList = "quiz__logo";
+            this.vraagFigure = document.createElement("figure");
+            this.vraagFigure.classList = "quiz__logo";
 
-            this.accountLogo = document.createElement("i");
-            this.accountLogo.classList = entry[1][0]["logo"];
+            this.vraagLogo = document.createElement("i");
+            this.vraagLogo.classList = entry[1][0]["logo"];
 
 
-            this.accountName = document.createElement("h4");
-            this.accountName.classList = "quiz__nameOfAccount";
-            this.accountName.innerText = entry[0];
+            this.vraagName = document.createElement("h4");
 
-            this.accounts.appendChild(this.account);
-            this.account.appendChild(this.bankySwitchButton);
-            this.bankySwitchButton.appendChild(this.accountFigure)
-            this.accountFigure.appendChild(this.accountLogo);
-            this.account.appendChild(this.accountName);
+            this.vragen.appendChild(this.vraag);
+            this.vraag.appendChild(this.quizSwitchButton);
+            this.quizSwitchButton.appendChild(this.vraagFigure)
+            this.vraagFigure.appendChild(this.vraagLogo);
+            this.vraag.appendChild(this.vraagName);
         })
 
     }
 
     render() {
         this.mainElement.appendChild(this.sectionTop);
-        this.sectionTop.appendChild(this.accounts);
+        this.sectionTop.appendChild(this.vragen);
 
     }
 
 }
 
-class Punten{
+class Punten {
     punten = 0;
-    
+
     addPoints(optellen) {
         this.punten = this.punten + optellen;
         console.log(this.punten);
@@ -244,7 +264,7 @@ class Punten{
 
 class App {
     Header;
-    Bankymain;
+    Quizmain;
     GetDataFromApi;
     punten;
 
@@ -252,21 +272,21 @@ class App {
         this.header = new Header("body")
 
         this.punten = new Punten();
-        this.Bankymain = new Bankymain("body",this.punten);
+        this.Quizmain = new Quizmain("body", this.punten);
 
         this.GetDataFromApi = new GetDataFromApi("../json/quiz.json");
 
         this.GetDataFromApi
             .getData().then((data) => {
-                this.Bankymain.makeQuizFromData(data);
-                this.Bankymain.makeButtonsFromData(data);
+                this.Quizmain.makeQuizFromData(data);
+                this.Quizmain.makeButtonsFromData(data);
 
             });
 
 
 
         this.header.render();
-        this.Bankymain.render();
+        this.Quizmain.render();
     }
 
 

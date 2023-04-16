@@ -49,7 +49,7 @@ class HogwartsEscapeMain{
 
         this.linkElement = document.createElement("a");
         this.linkElement.classList = "hogwartsEscape__link";
-        this.linkElement.href = "/avatar.html";
+        this.linkElement.href = "/quiz.html";
 
 
         this.buttonElement = document.createElement("button");

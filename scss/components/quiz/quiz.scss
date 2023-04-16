@@ -19,8 +19,9 @@
         display: flex;
 
         &--left {
-            flex-direction: column;
+            flex-direction: row;
             position: relative;
+            justify-content: space-between;
             align-items: center;
         }
 
@@ -48,21 +49,12 @@
     }
 
     &__logo {
-        border-radius: 50%;
-        font-size: 3rem;
-        width: 5rem;
-        height: 5rem;
-        background: colors.$dark_purple;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        box-shadow: vars.$box-shadow;
+        @include mixins.Circle_Default;
     }
 
-    &__number{
+    &__number {
         position: absolute;
-        top: 0 ;
+        top: 0;
         left: 0;
     }
 
@@ -111,14 +103,15 @@
         font-size: 400%;
     }
 
-    &__geenButton{
+    &__geenButton {
         display: none;
     }
 
     &__antwoordButton {
         @include mixins.Primairy_Default;
 
-        &--onclick {
+
+        &--select {
             @include mixins.Secondary_Default;
         }
 
@@ -156,7 +149,7 @@
         border: none;
     }
 
-    &__accounts {
+    &__vragen {
         list-style: none;
         display: flex;
         align-items: flex-start;
@@ -166,14 +159,25 @@
         gap: 2rem;
     }
 
-    &__account {
+    &__vraag {
         display: flex;
         align-items: center;
     }
 
-    &__nameOfAccount {
-        font-weight: 400;
+    &__volgendeLink {}
+
+    &__volgendeButton {
+
+        display: none;
+
+        &--show {
+            @include mixins.Circle_Default;
+        }
     }
 
 
+}
+
+.undefined {
+    display: none;
 }

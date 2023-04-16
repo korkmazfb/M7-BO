@@ -1,4 +1,5 @@
 @use"./colors.scss";
+@use"./vars.scss";
 
 @mixin Primairy_Default{
     font-size: 2.08rem;
@@ -45,5 +46,24 @@
         border-radius: 0.75rem;
         filter: grayscale(30%);
     
+    }
+}
+
+@mixin Circle_Default{
+    border-radius: 50%;
+    font-size: 3rem;
+    width: 5rem;
+    height: 5rem;
+    background: colors.$dark_purple;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    box-shadow: vars.$box-shadow;
+
+    &:hover{
+        color: colors.$text_white;
+        background: colors.$light_purple ;
+        filter: grayscale(30%);
     }
 }
