@@ -14,9 +14,18 @@
 
 
   &__section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     &--left {
-        display: flex;
+       
     }
+
+    &--right{
+      flex-direction: column;
+
+    }
+
   }
 
   &__wrappersave {
@@ -85,13 +94,13 @@
     font-size: 2rem;
   }
 
-  &__colorhats {
+  &__colors {
     display: flex;
     gap: 7rem;
     margin: 2rem;
   }
 
-  &__colorhat {
+  &__color {
     width: 4rem;
     height: 4rem;
     background-color: beige;
@@ -103,6 +112,8 @@
 
   &__save {
     width: 20rem;
+    height: 3rem;
+    background: colors.$light-purple;
 
     &:hover {
       cursor: pointer;

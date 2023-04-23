@@ -28,10 +28,30 @@
 // const name = new Name("henk")
 // const save = new Save(document.getElementById("js--save"),name);
 
+class GetDataFromApi {
+  url = "";
+  data = null;
+  constructor(newURL) {
+    this.url = newURL;
+  }
+
+  async getData() {
+    await fetch(this.url)
+      .then(function (response) {
+        return response.json();
+      })
+      .then((data) => {
+        this.data = data.episodes;
+      });
+    return this.data;
+  }
+}
+
 
 class AvatarMain{
   placeToRenderAvatarMain;
   LeftSection;
+  RightSection;
 
   constructor(placeToRenderAvatarMain){
     this.placeToRenderAvatarMain = document.getElementsByTagName(placeToRenderAvatarMain)[0];
@@ -40,6 +60,7 @@ class AvatarMain{
     this.mainElement.classList = "avatar";
 
     this.LeftSection = new AvatarLeftSection(this.mainElement);
+    this.RightSection = new AvatarRightSection(this.mainElement);
 
     
 
@@ -48,6 +69,8 @@ class AvatarMain{
   render(){
     this.placeToRenderAvatarMain.appendChild(this.mainElement);
     this.LeftSection.render();
+    this.RightSection.render();
+    
       
   }
 
@@ -100,29 +123,54 @@ class AvatarLeftSection {
   }
 }
 
+class AvatarRightSection{
+  mainElement;
+
+  constructor(mainElement){
+    this.mainElement = mainElement;
+
+    this.rightSectionElement = document.createElement("section")
+    this.rightSectionElement.classList = "avatar__section avatar__section--right";
+
+    this.h2Element = document.createElement("h2");
+    this.h2Element.classList = "avatar__h2";
+    this.h2Element.innerText = "Wich color do you want your hat ";
+    
+    this.iElement = document.createElement("i")
+    this.iElement.classList = "fa-solid fa-hat-wizard"
+
+    this.ulElement = document.createElement("ul");
+    this.ulElement.classList = "avatar__colors";
+
+    this.liElement = document.createElement("li");
+    this.liElement.classList = "avatar__color";
+
+
+  }
+
+  render(){
+    this.mainElement.appendChild(this.rightSectionElement);
+    this.rightSectionElement.appendChild(this.h2Element);
+    this.h2Element.appendChild(this.iElement);
+    this.rightSectionElement.appendChild(this.ulElement)
+    this.ulElement.appendChild(this.liElement);
+  
+
+    
+
+    
+  }
+
+}
+
 
 {/* <main class="avatar">
-<section class="avatar__left--side">
-    <div class="avatar__wrappersave">
-        <input class="avatar__name" id="js--input" type="text">
-        <button id="js--save" class="avatar__save">SAVE</button>
-        <figure class="avatar__hat"></figure>
-        <figure class="avatar__head">
-            
-            <figure class=" avatar__eye avatar__eye--left">
-
-
-            </figure>
-            <figure class="avatar__eye avatar__eye--right"></figure>
-        </figure>
-    </div>
-</section>
 <section class="avatar__right--side">
     <h2 class="avatar__h2">
         Wich color do you want your hat <i class="fa-solid fa-hat-wizard"></i>
     </h2>
-    <ul class="avatar__colorhats">
-        <li class="avatar__colorhat"></li>
+    <ul class="avatar__colors">
+        <li class="avatar__color"></li>
         <li class="avatar__colorhat"></li>
         <li class="avatar__colorhat"></li>
         <li class="avatar__colorhat"></li>
@@ -156,9 +204,15 @@ class AvatarLeftSection {
 
 class App{
   avatarmain;
+  GetDataFromApi;
 
   constructor(){
-    this.avatarmain = new AvatarMain("body")
+    this.avatarmain = new AvatarMain("body");
+
+
+    // this.GetDataFromApi.getData().then((data) => {
+    //   console.log(data)
+    // });
 
 
     this.avatarmain.render();

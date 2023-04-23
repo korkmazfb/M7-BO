@@ -103,8 +103,13 @@ h1 {
   border-bottom-left-radius: 0.5rem;
   border-top-left-radius: 0.5rem;
 }
-.avatar__section--left {
+.avatar__section {
   display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.avatar__section--right {
+  flex-direction: column;
 }
 .avatar__wrappersave {
   display: flex;
@@ -162,12 +167,12 @@ h1 {
 .avatar__h2 {
   font-size: 2rem;
 }
-.avatar__colorhats {
+.avatar__colors {
   display: flex;
   gap: 7rem;
   margin: 2rem;
 }
-.avatar__colorhat {
+.avatar__color {
   width: 4rem;
   height: 4rem;
   background-color: beige;
@@ -178,6 +183,8 @@ h1 {
 }
 .avatar__save {
   width: 20rem;
+  height: 3rem;
+  background: #604D8A;
 }
 .avatar__save:hover {
   cursor: pointer;
