@@ -119,6 +119,10 @@ h1 {
 }
 .avatar__name {
   margin-top: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
   font-size: 2.5rem;
   border-radius: 0.5rem;
   width: 20rem;
@@ -180,6 +184,9 @@ h1 {
   display: flex;
   flex-direction: column;
   border-radius: 0.3rem;
+}
+.avatar__color:hover {
+  cursor: pointer;
 }
 .avatar__save {
   width: 20rem;

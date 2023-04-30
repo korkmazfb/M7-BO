@@ -1,32 +1,4 @@
-// class Name{
-//     name;
 
-//     constructor(name){
-//         this.name = name;
-
-
-//     }
-
-// }
-
-
-
-// class Save{
-//     htmlElement;
-
-//   constructor(newHTMLElement,name) {
-//     this.htmlElement = newHTMLElement;
-//     this.htmlElement.onclick = this.onSavebuttonclicked;
-//     this.name = name;
-//   }
-
-//   onSavebuttonclicked = () => {
-//     window.localStorage.setItem("name", this.name.name);
-//   };
-// }
-
-// const name = new Name("henk")
-// const save = new Save(document.getElementById("js--save"),name);
 
 class GetDataFromApi {
   url = "";
@@ -90,10 +62,14 @@ class AvatarLeftSection {
 
     this.inputElement = document.createElement("input");
     this.inputElement.classList = "avatar__name";
+    this.inputElement.id = "save";
 
     this.buttonElement = document.createElement("button");
     this.buttonElement.classList = "avatar__save";
     this.buttonElement.innerText = "Save"
+   
+
+    
 
     this.hatElement = document.createElement("figure");
     this.hatElement.classList = "avatar__hat";
@@ -108,6 +84,18 @@ class AvatarLeftSection {
     this.eyeRightElement.classList = "avatar__eye avatar__eye--right"
   }
 
+  saveData(){
+    this.inputValue = this.inputElement.value;
+
+    localStorage.setItem('avatarName', this.inputValue); 
+    
+    this.buttonElement.addEventListener('click', () => {
+      this.saveData();
+    });
+}
+
+ 
+
   render(){
     this.mainElement.appendChild(this.leftSectionElement);
     this.leftSectionElement.appendChild(this.wrapperElement);
@@ -118,88 +106,151 @@ class AvatarLeftSection {
     this.wrapperElement.appendChild(this.headElement);
     this.headElement.appendChild(this.eyeleftElement);
     this.headElement.appendChild(this.eyeRightElement);
+    this.buttonElement.addEventListener('click', () => this.saveData())
+  }
+}
+
+class UL{
+  li = [];
+  ulElement;
+  randomColors;
+  constructor(rightSectionElement, randomColors){
+    this.rightSectionElement = rightSectionElement;
+    this.ulElement = document.createElement("ul");
+    this.randomColors = randomColors;
+  }
+
+  renderLi(){
+    for(let i = 0; i < 4; i++){
+      this.li.push(document.createElement("li"));
+      this.li[i].classList = "avatar__color";
+      this.randomColors = new RandomColors
+      this.li[i].style.backgroundColor = this.randomColors.hsl;
+      this.ulElement.appendChild(this.li[i]);
+    
+    }
+    this.ulElement.classList = "avatar__colors";
     
 
+
+    
   }
+
+  render(){
+    this.rightSectionElement.appendChild(this.ulElement);
+  }
+
+
+}
+
+class qeustion{
+  h2Element;
+  iElement = [];
+  constructor(rightSectionElement){
+    this.rightSectionElement = rightSectionElement;
+    this.h2Element = document.createElement("h2");
+  }
+
+  renderH2(){
+    for(let i = 0; i < 3; i++){
+      this.iElement.push(document.createElement("i"));
+      //hij pakt die icon niet
+      this.iElement[i].classList = "fa-solid fa-hat-wizard";
+      this.h2Element.appendChild(this.iElement[i]);
+      this.h2Element.classList = "avatar__h2";
+    
+    }
+    this.h2Element.innerText = "hier komt de vraag"
+    
+  }
+
+  render(){
+    this.rightSectionElement.appendChild(this.h2Element);
+  }
+}
+
+class RandomColors{
+  randomHue;
+  randomSaturation;
+  randomLightness;
+  hsl = "";
+  li;
+
+  constructor(li){
+    this.li = li;
+    this.generateHSL();
+
+  }
+
+  generateHue = function(){
+    this.randomHue = Math.floor(Math.random() * (360 - 1) + 1);
+
+
+}
+// in deze functie wordt de  hue gemaakt door de math functie 
+
+generateSaturation = function(){
+    this.randomSaturation = Math.floor(Math.random() * (79 - 11) + 11) + "%";
+
+
+}
+// in deze functie wordt de  saturation gemaakt door de math functie 
+
+
+
+generateLightness = function(){
+    this.randomLightness = Math.floor(Math.random() * (100 - 11) + 11) + "%";
+
+}
+// in deze functie wordt de  lightness gemaakt door de math functie 
+
+generateHSL = function(){
+    this.generateHue();
+    this.generateSaturation();
+    this.generateLightness();
+    this.hsl = `hsl(${this.randomHue}, ${this.randomSaturation}, ${this.randomLightness})`
+
+
+}
+
+
 }
 
 class AvatarRightSection{
   mainElement;
+  ul= [];
+  h2= [];
 
   constructor(mainElement){
+
+
+
     this.mainElement = mainElement;
 
     this.rightSectionElement = document.createElement("section")
     this.rightSectionElement.classList = "avatar__section avatar__section--right";
-
-    this.h2Element = document.createElement("h2");
-    this.h2Element.classList = "avatar__h2";
-    this.h2Element.innerText = "Wich color do you want your hat ";
+    for(let i =0; i < 3; i ++){
+      this.h2.push(new qeustion(this.rightSectionElement))
+      this.h2[i].renderH2();
+      this.h2[i].render();
+      this.ul.push(new UL(this.rightSectionElement));
+      this.ul[i].renderLi();
+      this.ul[i].render();
+   
     
-    this.iElement = document.createElement("i")
-    this.iElement.classList = "fa-solid fa-hat-wizard"
-
-    this.ulElement = document.createElement("ul");
-    this.ulElement.classList = "avatar__colors";
-
-    this.liElement = document.createElement("li");
-    this.liElement.classList = "avatar__color";
+    }
+    
 
 
   }
 
   render(){
     this.mainElement.appendChild(this.rightSectionElement);
-    this.rightSectionElement.appendChild(this.h2Element);
-    this.h2Element.appendChild(this.iElement);
-    this.rightSectionElement.appendChild(this.ulElement)
-    this.ulElement.appendChild(this.liElement);
-  
-
-    
-
     
   }
 
 }
 
-
-{/* <main class="avatar">
-<section class="avatar__right--side">
-    <h2 class="avatar__h2">
-        Wich color do you want your hat <i class="fa-solid fa-hat-wizard"></i>
-    </h2>
-    <ul class="avatar__colors">
-        <li class="avatar__color"></li>
-        <li class="avatar__colorhat"></li>
-        <li class="avatar__colorhat"></li>
-        <li class="avatar__colorhat"></li>
-    </ul>
-    <h2 class="avatar__h2">
-        Wich color do you want your eyes <i class="fa-solid fa-eye"></i>
-    </h2>
-    <ul class="avatar__colorhats">
-        <li class="avatar__colorhat"></li>
-        <li class="avatar__colorhat"></li>
-        <li class="avatar__colorhat"></li>
-        <li class="avatar__colorhat"></li>
-    </ul>
-    <h2 class="avatar__h2">
-        Wich color do you want your body <i class="fa-solid fa-person"></i>
-    </h2>
-    <ul class="avatar__colorhats">
-        <li class="avatar__colorhat"></li>
-        <li class="avatar__colorhat"></li>
-        <li class="avatar__colorhat"></li>
-        <li class="avatar__colorhat"></li>
-    </ul>
-</section>
-
-
-
-
-
-</main> */}
 
 
 class App{
