@@ -13,30 +13,41 @@ class GetDataFromApi {
         return response.json();
       })
       .then((data) => {
-        this.data = data.episodes;
+        this.data = data.choosing;
       });
     return this.data;
+
   }
+ 
 }
+
 
 
 class AvatarMain{
   placeToRenderAvatarMain;
   LeftSection;
   RightSection;
+  data;
 
-  constructor(placeToRenderAvatarMain){
+  constructor(placeToRenderAvatarMain, data){
     this.placeToRenderAvatarMain = document.getElementsByTagName(placeToRenderAvatarMain)[0];
+    this.data = data;
 
     this.mainElement = document.createElement("main");
     this.mainElement.classList = "avatar";
 
     this.LeftSection = new AvatarLeftSection(this.mainElement);
-    this.RightSection = new AvatarRightSection(this.mainElement);
+    this.RightSection = new AvatarRightSection(this.mainElement, this);
 
     
 
   }
+
+  // renderTextrightpanel(data){
+  //   this.RightSection.h2(data);
+
+
+  // }
 
   render(){
     this.placeToRenderAvatarMain.appendChild(this.mainElement);
@@ -88,7 +99,7 @@ class AvatarLeftSection {
     this.inputValue = this.inputElement.value;
 
     localStorage.setItem('avatarName', this.inputValue); 
-    
+
     this.buttonElement.addEventListener('click', () => {
       this.saveData();
     });
@@ -114,26 +125,39 @@ class UL{
   li = [];
   ulElement;
   randomColors;
-  constructor(rightSectionElement, randomColors){
+  leftSectionElement;
+  colorlist;
+  constructor(rightSectionElement, leftSectionElement, colorlist){
     this.rightSectionElement = rightSectionElement;
+    this.leftSectionElement = leftSectionElement;
     this.ulElement = document.createElement("ul");
-    this.randomColors = randomColors;
+    this.colorlist = colorlist;
   }
 
-  renderLi(){
-    for(let i = 0; i < 4; i++){
+  renderLi() {
+    for (let i = 0; i < 4; i++) {
       this.li.push(document.createElement("li"));
       this.li[i].classList = "avatar__color";
-      this.randomColors = new RandomColors
+      this.randomColors = new RandomColors();
       this.li[i].style.backgroundColor = this.randomColors.hsl;
       this.ulElement.appendChild(this.li[i]);
-    
+
+      this.ulElement.classList = "avatar__colors";
+      this.colorlist.forEach((element, index) => {
+        element.ulElement.classList.add('ul' + index);
+      });
+     
+      this.li[i].onclick = () => {
+        if(this.ulElement.classList.contains('ul0')) {
+          this.leftSectionElement.hatElement.style.borderBottomColor = this.li[i].style.backgroundColor;
+        } else if (this.ulElement.classList.contains('ul1')) {
+          this.leftSectionElement.eyeRightElement.style.backgroundColor = this.li[i].style.backgroundColor;
+          this.leftSectionElement.eyeleftElement.style.backgroundColor = this.li[i].style.backgroundColor;
+        } else if (this.ulElement.classList.contains('ul2')) {
+          this.leftSectionElement.headElement.style.backgroundColor = this.li[i].style.backgroundColor;
+        }
+      };
     }
-    this.ulElement.classList = "avatar__colors";
-    
-
-
-    
   }
 
   render(){
@@ -143,31 +167,38 @@ class UL{
 
 }
 
-class qeustion{
+class qeustion {
   h2Element;
+  icon;
+  data;
   iElement = [];
-  constructor(rightSectionElement){
+
+  constructor(rightSectionElement, data) {
     this.rightSectionElement = rightSectionElement;
     this.h2Element = document.createElement("h2");
+    this.icon = document.createElement("i");
+    this.data = data;
   }
 
-  renderH2(){
-    for(let i = 0; i < 3; i++){
+  renderH2(title) {
+    for (let i = 0; i < 3; i++) {
       this.iElement.push(document.createElement("i"));
-      //hij pakt die icon niet
-      this.iElement[i].classList = "fa-solid fa-hat-wizard";
-      this.h2Element.appendChild(this.iElement[i]);
+      this.icon.classList = "fa-solid fa-hat-wizard";
       this.h2Element.classList = "avatar__h2";
-    
+      this.h2Element.innerText = title;
     }
-    this.h2Element.innerText = "hier komt de vraag"
-    
+  }  
+
+  colorPicker() {
+    // hier komt de color functie
   }
 
-  render(){
+  render() {
     this.rightSectionElement.appendChild(this.h2Element);
+    this.h2Element.appendChild(this.icon);
   }
 }
+
 
 class RandomColors{
   randomHue;
@@ -220,22 +251,27 @@ class AvatarRightSection{
   mainElement;
   ul= [];
   h2= [];
+  avatarmain;
+  
 
-  constructor(mainElement){
-
-
+  constructor(mainElement, avatarmain){
+    this.avatarmain = avatarmain;
 
     this.mainElement = mainElement;
 
     this.rightSectionElement = document.createElement("section")
     this.rightSectionElement.classList = "avatar__section avatar__section--right";
     for(let i =0; i < 3; i ++){
-      this.h2.push(new qeustion(this.rightSectionElement))
-      this.h2[i].renderH2();
+      this.h2.push(new qeustion(this.rightSectionElement, this.avatarmain.data))
+      this.h2[i].renderH2(this.avatarmain.data[i].title);
       this.h2[i].render();
-      this.ul.push(new UL(this.rightSectionElement));
+
+
+
+      this.ul.push(new UL(this.rightSectionElement, this.avatarmain.LeftSection, this.ul));
       this.ul[i].renderLi();
       this.ul[i].render();
+
    
     
     }
@@ -246,7 +282,6 @@ class AvatarRightSection{
 
   render(){
     this.mainElement.appendChild(this.rightSectionElement);
-    
   }
 
 }
@@ -255,18 +290,16 @@ class AvatarRightSection{
 
 class App{
   avatarmain;
-  GetDataFromApi;
+  data;
+  qeustion;
 
   constructor(){
-    this.avatarmain = new AvatarMain("body");
+    this.data = new GetDataFromApi("../data/data.json");
 
-
-    // this.GetDataFromApi.getData().then((data) => {
-    //   console.log(data)
-    // });
-
-
-    this.avatarmain.render();
+    this.data.getData().then((data) => {
+      this.avatarmain = new AvatarMain("body", data);
+      this.avatarmain.render();
+    });
   }
 
 }
