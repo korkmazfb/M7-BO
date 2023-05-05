@@ -3,32 +3,32 @@
         {
             "logo": "fa-solid fa-1",
             "volgdendepagina":"quiz__volgendeButton",
-            "vraag": "Welke positie speelde Harry in de Gryffindor Quidditch team",
+            "vraag": "Witch magic type would you use?",
             "antwoord": "",
             "extra_class": "quiz__geenButton",
             "punten": 0
         },
         {
             "vraag": "",
-            "antwoord": "Seeker",
+            "antwoord": "Arithmancy, Charms ",
             "extra_class": "quiz__antwoordButton",
             "punten": 5
         },
         {
             "vraag": "",
-            "antwoord": "Striker",
+            "antwoord": "Potions, Transfiguration",
             "extra_class": "quiz__antwoordButton",
             "punten": 0
         },
         {
             "vraag": "",
-            "antwoord": "Runner",
+            "antwoord": "Divination, Herbology",
             "extra_class": "quiz__antwoordButton",
             "punten": 0
         },
         {
             "vraag": "",
-            "antwoord": "Hij speelde niet",
+            "antwoord": "Dark Arts",
             "extra_class": "quiz__antwoordButton",
             "punten": 0
         }
@@ -37,32 +37,32 @@
         {
             "logo": "fa-solid fa-2",
             "volgdendepagina":"quiz__volgendeButton",
-            "vraag": "Wie maakt wetten voor de magische wereld?",
+            "vraag": "Wich type of transportation would you use (flying and ground)?",
             "antwoord": "",
             "extra_class": "quiz__geenButton",
             "punten": 0
         },
         {
             "vraag": "",
-            "antwoord": "Hagrid",
+            "antwoord": "broomsticks, the Knight Bus ",
             "extra_class": "quiz__antwoordButton",
             "punten": 0
         },
         {
             "vraag": "",
-            "antwoord": "God",
+            "antwoord": "flying carpets, Ministry cars",
             "extra_class": "quiz__antwoordButton",
             "punten": 0
         },
         {
             "vraag": "",
-            "antwoord": "Het Ministerie van Toverkunst",
+            "antwoord": "flying motorcycles, the Hogwarts Express",
             "extra_class": "quiz__antwoordButton",
             "punten": 5
         },
         {
             "vraag": "",
-            "antwoord": "Voldemort",
+            "antwoord": "flying cars, Toilet network",
             "extra_class": "quiz__antwoordButton",
             "punten": 0
         }
@@ -71,32 +71,32 @@
         {
             "logo": "fa-solid fa-3",
             "volgdendepagina":"quiz__volgendeButton",
-            "vraag": "Hoe noemen de leerlingen de geest van gryffindor?",
+            "vraag": "what kind of job would you like to have?",
             "antwoord": "",
             "extra_class": "quiz__geenButton",
             "punten": 0
         },
         {
             "vraag": "",
-            "antwoord": "Professor McGonagall",
+            "antwoord": "Wand maker",
             "extra_class": "quiz__antwoordButton",
             "punten": 0
         },
         {
             "vraag": "",
-            "antwoord": "Moaning Myrtle",
+            "antwoord": "Dragon keeper",
             "extra_class": "quiz__antwoordButton",
             "punten": 0
         },
         {
             "vraag": "",
-            "antwoord": "Bijna onthoofde Nick",
+            "antwoord": "Healer",
             "extra_class": "quiz__antwoordButton",
             "punten": 5
         },
         {
             "vraag": "",
-            "antwoord": "Peeves",
+            "antwoord": "Magizoologist",
             "extra_class": "quiz__antwoordButton",
             "punten": 0
         }
@@ -105,32 +105,32 @@
         {
             "logo": "fa-solid fa-4",
             "volgdendepagina":"quiz__volgendeButton",
-            "vraag": "Wat is de volledige, echte naam van Heer Voldemort?",
+            "vraag": "What kind of wand Do you want?",
             "antwoord": "",
             "extra_class": "quiz__geenButton",
             "punten":0
         },
         {
             "vraag": "",
-            "antwoord": "Tom Marvolo Riddle",
+            "antwoord": "Acacia",
             "extra_class": "quiz__antwoordButton",
             "punten": 5
         },
         {
             "vraag": "",
-            "antwoord": "Hedwig",
+            "antwoord": "Alder",
             "extra_class": "quiz__antwoordButton",
             "punten": 0
         },
         {
             "vraag": "",
-            "antwoord": "Draco Malfoy",
+            "antwoord": "Ash",
             "extra_class": "quiz__antwoordButton",
             "punten": 0
         },
         {
             "vraag": "",
-            "antwoord": "Viktor Krum",
+            "antwoord": "Aspen",
             "extra_class": "quiz__antwoordButton",
             "punten": 0
         }
@@ -139,32 +139,26 @@
         {
             "logo": "fa-solid fa-5",
             "volgdendepagina":"quiz__volgendeButton",
-            "vraag": "Hoe weert men een Dementor af?",
+            "vraag": "How will you be messaging people?",
             "antwoord": "",
             "extra_class": "quiz__geenButton",
             "punten":0
         },
         {
             "vraag": "",
-            "antwoord": "Gobstones",
+            "antwoord": "Owl post",
             "extra_class": "quiz__antwoordButton",
             "punten": 0
         },
         {
             "vraag": "",
-            "antwoord": "De Patronus Charm",
+            "antwoord": "Wizarding wireless radio",
             "extra_class": "quiz__antwoordButton",
             "punten": 5
         },
         {
             "vraag": "",
-            "antwoord": "Een feniksveer",
-            "extra_class": "quiz__antwoordButton",
-            "punten": 0
-        },
-        {
-            "vraag": "",
-            "antwoord": "Boterbier",
+            "antwoord": "Fireplaces",
             "extra_class": "quiz__antwoordButton",
             "punten": 0
         }
@@ -173,32 +167,32 @@
         {
             "logo": "fa-solid fa-6",
             "volgdendepagina":"quiz__volgendeButton--show",
-            "vraag": "Waar worden de kluizen bewaard in Goudgrijp Bank?",
+            "vraag": "Where will you be hanging around the most?",
             "antwoord": "",
             "extra_class": "quiz__geenButton",
             "punten": 0
         },
         {
             "vraag": "",
-            "antwoord": "In een tunnel die naar de Shrieking Shack leidt",
+            "antwoord": "In the common rooms",
             "extra_class": "quiz__antwoordButton",
             "punten": 0
         },
         {
             "vraag": "",
-            "antwoord": "Platform 9 en 3/4 ",
+            "antwoord": "The library",
             "extra_class": "quiz__antwoordButton",
             "punten": 0
         },
         {
             "vraag": "",
-            "antwoord": "In de meisjesbadkamer op de tweede verdieping",
+            "antwoord": "Hagrid's hut",
             "extra_class": "quiz__antwoordButton",
             "punten": 0
         },
         {
             "vraag": "",
-            "antwoord": "Diep ondergronds",
+            "antwoord": "The room of requirement",
             "extra_class": "quiz__antwoordButton",
             "punten": 5
         }

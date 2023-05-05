@@ -80,6 +80,10 @@ h1 {
   border: none;
   transition: 0.2s;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.6rem;
   animation-name: popup;
   animation-duration: 0.6s;
 }
@@ -91,6 +95,10 @@ h1 {
   padding: 2rem;
   border-radius: 0.75rem;
   border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.6rem;
 }
 
 .avatar {
@@ -140,7 +148,7 @@ h1 {
   background: white;
   display: flex;
   flex-direction: column-reverse;
-  padding: 4rem;
+  padding-left: 4rem;
   max-width: 150rem;
   width: 100%;
   min-height: calc(100vh - 8rem - 2rem);
@@ -151,8 +159,9 @@ h1 {
 .quiz__section--left {
   flex-direction: row;
   position: relative;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
+  height: 70%;
 }
 .quiz__header {
   display: flex;
@@ -180,6 +189,7 @@ h1 {
   justify-content: center;
   color: white;
   box-shadow: 0 0.2rem 0.5rem 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 }
 .quiz__logo:hover {
   color: #FFFFFF;
@@ -191,31 +201,19 @@ h1 {
   top: 0;
   left: 0;
 }
-.quiz__eye {
-  border-radius: 50%;
-  font-size: 2rem;
-  width: 3rem;
-  height: 3rem;
-  background: #462f79;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  box-shadow: 0 0.2rem 0.5rem 0 rgba(0, 0, 0, 0.2);
-}
-.quiz__transactions {
+.quiz__QandAs {
   padding: 2rem;
   list-style: none;
   padding-top: 5rem;
   display: flex;
   gap: 2rem;
-  height: 100%;
   overflow: hidden;
   flex-wrap: wrap;
   width: 60rem;
   justify-content: center;
   align-items: center;
 }
-.quiz__transaction {
+.quiz__QandA {
   display: flex;
   align-items: center;
   font-size: 120%;
@@ -225,7 +223,7 @@ h1 {
 }
 .quiz__vraag {
   font-weight: 600;
-  font-size: 400%;
+  font-size: 275%;
 }
 .quiz__geenButton {
   display: none;
@@ -242,6 +240,10 @@ h1 {
   border: none;
   transition: 0.2s;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.6rem;
 }
 .quiz__antwoordButton:hover {
   font-size: 2.08rem;
@@ -251,6 +253,10 @@ h1 {
   padding: 2rem;
   border-radius: 0.75rem;
   border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.6rem;
 }
 .quiz__antwoordButton--select {
   font-size: 2.08rem;
@@ -331,10 +337,166 @@ h1 {
   filter: grayscale(30%);
 }
 
+.quizOnclick {
+  max-width: 150rem;
+  width: 100%;
+  min-height: calc(100vh - 8rem - 2rem);
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.quizOnclick--section {
+  display: none;
+}
+.quizOnclick--img {
+  z-index: 1;
+  width: 30rem;
+  height: 30rem;
+  opacity: 0;
+  animation: House 0.8s forwards;
+  animation-delay: 3s;
+}
+@keyframes House {
+  from {
+    opacity: 0;
+    transform: translateY(-5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0rem);
+  }
+}
+.quizOnclick--text {
+  font-size: 500%;
+  font-weight: 700;
+  opacity: 0;
+  animation: House 0.8s forwards;
+  animation-delay: 3s;
+}
+@keyframes House {
+  from {
+    opacity: 0;
+    transform: translateY(-5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0rem);
+  }
+}
+.quizOnclick--yellow {
+  animation: backgroundY 3s forwards;
+}
+@keyframes backgroundY {
+  0% {
+    background: yellow;
+  }
+  25% {
+    background: green;
+  }
+  50% {
+    background: red;
+  }
+  75% {
+    background: blue;
+  }
+  100% {
+    background: yellow;
+  }
+}
+.quizOnclick--green {
+  animation: backgroundG 3s forwards;
+}
+@keyframes backgroundG {
+  0% {
+    background: red;
+  }
+  25% {
+    background: green;
+  }
+  50% {
+    background: yellow;
+  }
+  75% {
+    background: blue;
+  }
+  100% {
+    background: green;
+  }
+}
+.quizOnclick--blue {
+  animation: backgroundB 3s forwards;
+}
+@keyframes backgroundB {
+  0% {
+    background: green;
+  }
+  25% {
+    background: red;
+  }
+  50% {
+    background: blue;
+  }
+  75% {
+    background: yellow;
+  }
+  100% {
+    background: blue;
+  }
+}
+.quizOnclick--red {
+  animation: backgroundR 3s forwards;
+}
+@keyframes backgroundR {
+  0% {
+    background: yellow;
+  }
+  25% {
+    background: red;
+  }
+  50% {
+    background: blue;
+  }
+  75% {
+    background: green;
+  }
+  100% {
+    background: red;
+  }
+}
+
 .undefined {
   display: none;
 }
 
+@media screen and (max-width: 28.125rem) {
+  .header {
+    height: 12rem;
+  }
+  .header__text {
+    font-size: 150%;
+  }
+  .quiz {
+    display: block;
+    padding: 1.5rem;
+  }
+  .quiz__section--left {
+    height: 92.5%;
+    flex-direction: column;
+  }
+  .quiz__logo {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+  .quiz__number {
+    width: 5rem;
+    height: 5rem;
+  }
+  .quiz__QandAs {
+    width: 100%;
+  }
+}
 /*# sourceMappingURL=style.scss.map */
 
 /*# sourceMappingURL=style.css.map */

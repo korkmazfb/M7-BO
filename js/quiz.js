@@ -57,9 +57,9 @@ class Quizmain {
 
         this.mainElement = document.createElement("main");
         this.mainElement.classList = "quiz";
-        
+
         this.topSection = new QuiztopSection(this.mainElement, this);
-        this.bottomSection = new QuizbottomSection(this.mainElement, this.punten);
+        this.bottomSection = new QuizbottomSection(this.mainElement, this.punten, this.topSection);
 
 
     }
@@ -152,10 +152,12 @@ class QuiztopSection {
 class QuizbottomSection {
     mainElement;
     punten;
-    constructor(mainElement, punten) {
+    top;
+    constructor(mainElement, punten, topSection) {
         this.punten = punten;
         this.mainElement = mainElement;
-
+        this.top = topSection;
+        console.log(this.top);
         this.sectionBottom = document.createElement("section");
         this.sectionBottom.classList = "quiz__section quiz__section--left";
 
@@ -171,7 +173,7 @@ class QuizbottomSection {
 
 
         this.Transactions = document.createElement("ul")
-        this.Transactions.classList = "quiz__transactions";
+        this.Transactions.classList = "quiz__QandAs";
 
         this.volgendePaginaLink = document.createElement("a");
         this.volgendePaginaLink.classList = "quiz__volgendeLink";
@@ -194,7 +196,7 @@ class QuizbottomSection {
         for (let i = 0; i < data[accountToShow].length; i++) {
 
             this.Transaction = document.createElement("li");
-            this.Transaction.classList = ("quiz__transaction");
+            this.Transaction.classList = ("quiz__QandA");
 
             this.transactionName = document.createElement("h2");
             this.transactionName.classList = "quiz__vraag";
@@ -225,6 +227,7 @@ class QuizbottomSection {
 
 
 
+
             this.Transactions.appendChild(this.Transaction);
             this.Transaction.appendChild(this.transactionName);
             this.Transaction.appendChild(this.antwoordButton);
@@ -241,27 +244,79 @@ class QuizbottomSection {
     antwoordOnclick = (data) => {
         this.punten.addPoints(data.punten);
     }
-    
-    volgendeButtonOnclick = () => {
 
-        if (this.punten = 0,5) {
-            console.log("ik ben in Hufflepuff");
+    volgendeButtonOnclick = () => {
+        console.log(this.punten);
+        if (this.punten.punten === 0 || this.punten.punten === 10) {
+            console.log("hufflepuf");
+            this.mainElement.classList = "quizOnclick quizOnclick--yellow";
+            this.sectionBottom.classList = "quizOnclick--section";
+            this.top.sectionTop.classList = "quizOnclick--section";
+            this.imgElement = document.createElement("img");
+            this.imgElement.classList = "quizOnclick--img";
+            this.imgElement.src = "img/Hufflepuff.webp";
+
+            this.welkomText = document.createElement("h2");
+            this.welkomText.classList = "quizOnclick--text";
+            this.welkomText.innerText = "Welkom bij Hufflepuff";
+
+            this.renderAfterclick();
         }
-        else if (this.punten = 15,20) {
+        else if (this.punten.punten === 5 || this.punten.punten === 25) {
             console.log("ik ben in Slytherin");
+            this.mainElement.classList = "quizOnclick quizOnclick--green";
+            this.sectionBottom.classList = "quizOnclick--section";
+            this.top.sectionTop.classList = "quizOnclick--section";
+            this.imgElement = document.createElement("img");
+            this.imgElement.classList = "quizOnclick--img";
+            this.imgElement.src = "img/Slytherin.webp";
+
+            this.welkomText = document.createElement("h2");
+            this.welkomText.classList = "quizOnclick--text";
+            this.welkomText.innerText = "Welkom bij Slytherin";
+
+            this.renderAfterclick();
         }
-        else if (this.punten = 10,25) {
+
+        else if (this.punten.punten === 15 || this.punten.punten === 20) {
             console.log("ik ben in Ravenclaw");
+            this.mainElement.classList = "quizOnclick quizOnclick--blue";
+            this.sectionBottom.classList = "quizOnclick--section";
+            this.top.sectionTop.classList = "quizOnclick--section";
+            this.imgElement = document.createElement("img");
+            this.imgElement.classList = "quizOnclick--img";
+            this.imgElement.src = "img/Ravenclaw.webp";
+
+            this.welkomText = document.createElement("h2");
+            this.welkomText.classList = "quizOnclick--text";
+            this.welkomText.innerText = "Welkom bij Ravenclaw";
+
+            this.renderAfterclick();
         }
         else {
             console.log("ik ben Gryffindor");
+            this.mainElement.classList = "quizOnclick quizOnclick--red";
+            this.sectionBottom.classList = "quizOnclick--section";
+            this.top.sectionTop.classList = "quizOnclick--section";
+            this.imgElement = document.createElement("img");
+            this.imgElement.classList = "quizOnclick--img";
+            this.imgElement.src = "img/Gryffindor.webp";
+
+            this.welkomText = document.createElement("h2");
+            this.welkomText.classList = "quizOnclick--text";
+            this.welkomText.innerText = "Welkom bij Gryffindor";
+
+            this.renderAfterclick();
         }
 
     }
 
 
 
-
+    renderAfterclick = () => {
+        this.mainElement.appendChild(this.imgElement);
+        this.mainElement.appendChild(this.welkomText);
+    }
 
 
     render() {
