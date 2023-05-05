@@ -49,7 +49,7 @@ class HogwartsEscapeMain{
 
         this.linkElement = document.createElement("a");
         this.linkElement.classList = "hogwartsEscape__link";
-        this.linkElement.href = "/quiz.html";
+        this.linkElement.href = "/avatar.html";
 
 
         this.buttonElement = document.createElement("button");
@@ -72,18 +72,6 @@ class HogwartsEscapeMain{
         this.linkElement.appendChild(this.buttonElement);
     }
 
-
-//     <main class="hogwartsEscape">
-//     <header class="hogwartsEscape__header">
-//         <ul class="hogwartsEscape__socials">
-//             <a class="hogwartsEscape__social"href="https://www.instagram.com/thehogwartsescape/"><i class="fa-brands fa-instagram"></i></a>
-//             <a class="hogwartsEscape__social"href="https://www.facebook.com/thehogwartsescape" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-//         </ul>
-//     </header>
-//     <h1 class="hogwartsEscape__title">Hogwarts Escape</h1>
-//     <a class="hogwartsEscape__link" href="avatar.html"><Button class="hogwartsEscape__button">Start</Button></a>
-
-// </main>
 }
 
 const hogwartsEscape = new HogwartsEscapeMain("body");

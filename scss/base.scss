@@ -1,11 +1,15 @@
 @use "./abstracts/colors.scss";
 
 body{
-    width: 100%;
-    height: 100vh;
     background: #eee;
     font-family: 'Playfair Display', serif;
     color: colors.$text_black;
+    padding: 0rem;
+    background:colors.$dark_purple;
+}
+
+.avatar__body{
+    padding: 0 3rem;
 }
 
 

@@ -9,11 +9,15 @@ html {
 }
 
 body {
-  width: 100%;
-  height: 100vh;
   background: #eee;
   font-family: "Playfair Display", serif;
   color: #1D1D1D;
+  padding: 0rem;
+  background: #462f79;
+}
+
+.avatar__body {
+  padding: 0 3rem;
 }
 
 h1 {
@@ -102,9 +106,158 @@ h1 {
 }
 
 .avatar {
-  background: linear-gradient(to bottom right, #462f79, #604D8A);
-  width: 100%;
-  min-height: 100vh;
+  background: #fff;
+  max-width: 150rem;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  margin-top: 2rem;
+  height: 60rem;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  border-top-left-radius: 0.5rem;
+}
+.avatar__section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.avatar__section--right {
+  flex-direction: column;
+}
+.avatar__wrappersave {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  margin-left: 20rem;
+}
+.avatar__name {
+  margin-top: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  font-size: 2.5rem;
+  border-radius: 0.5rem;
+  width: 20rem;
+}
+.avatar__hat {
+  margin-top: 6rem;
+  width: 15rem;
+  border-bottom: 15rem solid #f2e3db;
+  border-right: 8rem solid transparent;
+  border-left: 8rem solid transparent;
+  z-index: 1;
+}
+.avatar__head {
+  width: 16rem;
+  aspect-ratio: 1/1;
+  background: #f2e3db;
+  border-radius: 50%;
+  position: relative;
+  z-index: 0;
+  top: -5rem;
+}
+.avatar__eye {
+  position: absolute;
+  display: flex;
+  background: #393646;
+  border-radius: 50%;
+  width: 1rem;
+  aspect-ratio: 1/1;
+  bottom: 9rem;
+}
+.avatar__eye--left {
+  left: 4rem;
+}
+.avatar__eye--right {
+  left: 10rem;
+}
+.avatar__right--side {
+  background-color: blue;
+  display: flex;
+  justify-content: center;
+  padding: 4rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+}
+.avatar__h2 {
+  font-size: 2rem;
+}
+.avatar__colors {
+  display: flex;
+  gap: 7rem;
+  margin: 2rem;
+}
+.avatar__color {
+  width: 4rem;
+  height: 4rem;
+  background-color: beige;
+  gap: 7rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.3rem;
+}
+.avatar__color:hover {
+  cursor: pointer;
+}
+.avatar__save {
+  font-size: 2.08rem;
+  color: #FFFFFF;
+  background: #462f79;
+  width: 20rem;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  border: none;
+  transition: 0.2s;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.6rem;
+}
+.avatar__save:hover {
+  font-size: 2.08rem;
+  color: #FFFFFF;
+  background: #604D8A;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.6rem;
+}
+.avatar__quizButton {
+  font-size: 2.08rem;
+  color: #FFFFFF;
+  background: #462f79;
+  width: max-content;
+  min-width: 25rem;
+  max-width: 27rem;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  border: none;
+  transition: 0.2s;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.6rem;
+}
+.avatar__quizButton:hover {
+  font-size: 2.08rem;
+  color: #FFFFFF;
+  background: #604D8A;
+  width: max-content;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.6rem;
 }
 
 .quiz__body {
