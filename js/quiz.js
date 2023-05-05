@@ -70,7 +70,6 @@ class Quizmain {
 
     makeQuizFromData(data) {
         this.bottomSection.makeQuizFromData(Object.entries(data)[0][0], data);
-        console.log(Object.entries(data)[5][0]);
     }
 
 
@@ -116,7 +115,6 @@ class QuiztopSection {
             this.vraag.classList = "quiz__account";
             this.vraag.onclick = () => {
                 this.quizmain.callFromtopSection(entry[0], data);
-                console.log(entry[1]);
             }
 
             this.quizSwitchButton = document.createElement("button");
@@ -157,7 +155,6 @@ class QuizbottomSection {
         this.punten = punten;
         this.mainElement = mainElement;
         this.top = topSection;
-        console.log(this.top);
         this.sectionBottom = document.createElement("section");
         this.sectionBottom.classList = "quiz__section quiz__section--left";
 
@@ -246,9 +243,7 @@ class QuizbottomSection {
     }
 
     volgendeButtonOnclick = () => {
-        console.log(this.punten);
         if (this.punten.punten === 0 || this.punten.punten === 10) {
-            console.log("hufflepuf");
             this.mainElement.classList = "quizOnclick quizOnclick--yellow";
             this.sectionBottom.classList = "quizOnclick--section";
             this.top.sectionTop.classList = "quizOnclick--section";
@@ -258,12 +253,11 @@ class QuizbottomSection {
 
             this.welkomText = document.createElement("h2");
             this.welkomText.classList = "quizOnclick--text";
-            this.welkomText.innerText = "Welkom bij Hufflepuff";
+            this.welkomText.innerText = "Welcom to Hufflepuff";
 
             this.renderAfterclick();
         }
         else if (this.punten.punten === 5 || this.punten.punten === 25) {
-            console.log("ik ben in Slytherin");
             this.mainElement.classList = "quizOnclick quizOnclick--green";
             this.sectionBottom.classList = "quizOnclick--section";
             this.top.sectionTop.classList = "quizOnclick--section";
@@ -273,13 +267,12 @@ class QuizbottomSection {
 
             this.welkomText = document.createElement("h2");
             this.welkomText.classList = "quizOnclick--text";
-            this.welkomText.innerText = "Welkom bij Slytherin";
+            this.welkomText.innerText = "Welcom to Slytherin";
 
             this.renderAfterclick();
         }
 
         else if (this.punten.punten === 15 || this.punten.punten === 20) {
-            console.log("ik ben in Ravenclaw");
             this.mainElement.classList = "quizOnclick quizOnclick--blue";
             this.sectionBottom.classList = "quizOnclick--section";
             this.top.sectionTop.classList = "quizOnclick--section";
@@ -289,12 +282,11 @@ class QuizbottomSection {
 
             this.welkomText = document.createElement("h2");
             this.welkomText.classList = "quizOnclick--text";
-            this.welkomText.innerText = "Welkom bij Ravenclaw";
+            this.welkomText.innerText = "Welcom to Ravenclaw";
 
             this.renderAfterclick();
         }
         else {
-            console.log("ik ben Gryffindor");
             this.mainElement.classList = "quizOnclick quizOnclick--red";
             this.sectionBottom.classList = "quizOnclick--section";
             this.top.sectionTop.classList = "quizOnclick--section";
@@ -304,7 +296,7 @@ class QuizbottomSection {
 
             this.welkomText = document.createElement("h2");
             this.welkomText.classList = "quizOnclick--text";
-            this.welkomText.innerText = "Welkom bij Gryffindor";
+            this.welkomText.innerText = "Welcom to Gryffindor";
 
             this.renderAfterclick();
         }
@@ -337,7 +329,6 @@ class Punten {
 
     addPoints(optellen) {
         this.punten = this.punten + optellen;
-        console.log(this.punten);
     }
 }
 

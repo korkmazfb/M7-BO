@@ -1,4 +1,5 @@
 @use "../../abstracts/colors.scss";
+@use "../../abstracts/mixins.scss";
 
 .avatar {
   background: #fff;
@@ -118,12 +119,38 @@
   }
 
   &__save {
+    font-size: 2.08rem;
+    color: colors.$text_white;
+    background: colors.$dark_purple ;
+
     width: 20rem;
-    height: 3rem;
-    background: colors.$light-purple;
+    padding: 2rem;
+    border-radius: 0.75rem;
+    border: none;
+    transition: 0.2s;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.6rem;
 
     &:hover {
-      cursor: pointer;
+        font-size: 2.08rem;
+        color: colors.$text_white;
+        background: colors.$light_purple ;
+        padding: 2rem;
+        border-radius: 0.75rem;
+        border: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 1.6rem;
+
     }
+
+  }
+
+  &__quizButton{
+    @include mixins.Primairy_Default;
   }
 }

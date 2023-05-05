@@ -12,8 +12,12 @@ body {
   background: #eee;
   font-family: "Playfair Display", serif;
   color: #1D1D1D;
-  padding: 3rem;
+  padding: 0rem;
   background: #462f79;
+}
+
+.avatar__body {
+  padding: 0 3rem;
 }
 
 h1 {
@@ -199,12 +203,61 @@ h1 {
   cursor: pointer;
 }
 .avatar__save {
+  font-size: 2.08rem;
+  color: #FFFFFF;
+  background: #462f79;
   width: 20rem;
-  height: 3rem;
-  background: #604D8A;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  border: none;
+  transition: 0.2s;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.6rem;
 }
 .avatar__save:hover {
+  font-size: 2.08rem;
+  color: #FFFFFF;
+  background: #604D8A;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.6rem;
+}
+.avatar__quizButton {
+  font-size: 2.08rem;
+  color: #FFFFFF;
+  background: #462f79;
+  width: max-content;
+  min-width: 25rem;
+  max-width: 27rem;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  border: none;
+  transition: 0.2s;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.6rem;
+}
+.avatar__quizButton:hover {
+  font-size: 2.08rem;
+  color: #FFFFFF;
+  background: #604D8A;
+  width: max-content;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.6rem;
 }
 
 .quiz__body {
