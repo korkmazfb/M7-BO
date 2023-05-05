@@ -1,0 +1,16 @@
+@use "../../abstracts/colors.scss";
+@use "../../abstracts/vars.scss";
+
+.quiz__body{
+    font-family: 'Playfair Display', serif;
+    background:colors.$dark_purple;
+    height: 100vh;
+    padding: map-get(vars.$vhCalc, "paddingOfBody");
+    padding-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+}

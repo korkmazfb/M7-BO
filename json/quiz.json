@@ -1,0 +1,200 @@
+{
+    "vraag 1": [
+        {
+            "logo": "fa-solid fa-1",
+            "volgdendepagina":"quiz__volgendeButton",
+            "vraag": "Witch magic type would you use?",
+            "antwoord": "",
+            "extra_class": "quiz__geenButton",
+            "punten": 0
+        },
+        {
+            "vraag": "",
+            "antwoord": "Arithmancy, Charms ",
+            "extra_class": "quiz__antwoordButton",
+            "punten": 5
+        },
+        {
+            "vraag": "",
+            "antwoord": "Potions, Transfiguration",
+            "extra_class": "quiz__antwoordButton",
+            "punten": 0
+        },
+        {
+            "vraag": "",
+            "antwoord": "Divination, Herbology",
+            "extra_class": "quiz__antwoordButton",
+            "punten": 0
+        },
+        {
+            "vraag": "",
+            "antwoord": "Dark Arts",
+            "extra_class": "quiz__antwoordButton",
+            "punten": 0
+        }
+    ],
+    "vraag 2": [
+        {
+            "logo": "fa-solid fa-2",
+            "volgdendepagina":"quiz__volgendeButton",
+            "vraag": "Wich type of transportation would you use (flying and ground)?",
+            "antwoord": "",
+            "extra_class": "quiz__geenButton",
+            "punten": 0
+        },
+        {
+            "vraag": "",
+            "antwoord": "broomsticks, the Knight Bus ",
+            "extra_class": "quiz__antwoordButton",
+            "punten": 0
+        },
+        {
+            "vraag": "",
+            "antwoord": "flying carpets, Ministry cars",
+            "extra_class": "quiz__antwoordButton",
+            "punten": 0
+        },
+        {
+            "vraag": "",
+            "antwoord": "flying motorcycles, the Hogwarts Express",
+            "extra_class": "quiz__antwoordButton",
+            "punten": 5
+        },
+        {
+            "vraag": "",
+            "antwoord": "flying cars, Toilet network",
+            "extra_class": "quiz__antwoordButton",
+            "punten": 0
+        }
+    ],
+    "vraag 3": [
+        {
+            "logo": "fa-solid fa-3",
+            "volgdendepagina":"quiz__volgendeButton",
+            "vraag": "what kind of job would you like to have?",
+            "antwoord": "",
+            "extra_class": "quiz__geenButton",
+            "punten": 0
+        },
+        {
+            "vraag": "",
+            "antwoord": "Wand maker",
+            "extra_class": "quiz__antwoordButton",
+            "punten": 0
+        },
+        {
+            "vraag": "",
+            "antwoord": "Dragon keeper",
+            "extra_class": "quiz__antwoordButton",
+            "punten": 0
+        },
+        {
+            "vraag": "",
+            "antwoord": "Healer",
+            "extra_class": "quiz__antwoordButton",
+            "punten": 5
+        },
+        {
+            "vraag": "",
+            "antwoord": "Magizoologist",
+            "extra_class": "quiz__antwoordButton",
+            "punten": 0
+        }
+    ],
+    "vraag 4": [
+        {
+            "logo": "fa-solid fa-4",
+            "volgdendepagina":"quiz__volgendeButton",
+            "vraag": "What kind of wand Do you want?",
+            "antwoord": "",
+            "extra_class": "quiz__geenButton",
+            "punten":0
+        },
+        {
+            "vraag": "",
+            "antwoord": "Acacia",
+            "extra_class": "quiz__antwoordButton",
+            "punten": 5
+        },
+        {
+            "vraag": "",
+            "antwoord": "Alder",
+            "extra_class": "quiz__antwoordButton",
+            "punten": 0
+        },
+        {
+            "vraag": "",
+            "antwoord": "Ash",
+            "extra_class": "quiz__antwoordButton",
+            "punten": 0
+        },
+        {
+            "vraag": "",
+            "antwoord": "Aspen",
+            "extra_class": "quiz__antwoordButton",
+            "punten": 0
+        }
+    ],
+    "vraag 5": [
+        {
+            "logo": "fa-solid fa-5",
+            "volgdendepagina":"quiz__volgendeButton",
+            "vraag": "How will you be messaging people?",
+            "antwoord": "",
+            "extra_class": "quiz__geenButton",
+            "punten":0
+        },
+        {
+            "vraag": "",
+            "antwoord": "Owl post",
+            "extra_class": "quiz__antwoordButton",
+            "punten": 0
+        },
+        {
+            "vraag": "",
+            "antwoord": "Wizarding wireless radio",
+            "extra_class": "quiz__antwoordButton",
+            "punten": 5
+        },
+        {
+            "vraag": "",
+            "antwoord": "Fireplaces",
+            "extra_class": "quiz__antwoordButton",
+            "punten": 0
+        }
+    ],
+    "vraag 6": [
+        {
+            "logo": "fa-solid fa-6",
+            "volgdendepagina":"quiz__volgendeButton--show",
+            "vraag": "Where will you be hanging around the most?",
+            "antwoord": "",
+            "extra_class": "quiz__geenButton",
+            "punten": 0
+        },
+        {
+            "vraag": "",
+            "antwoord": "In the common rooms",
+            "extra_class": "quiz__antwoordButton",
+            "punten": 0
+        },
+        {
+            "vraag": "",
+            "antwoord": "The library",
+            "extra_class": "quiz__antwoordButton",
+            "punten": 0
+        },
+        {
+            "vraag": "",
+            "antwoord": "Hagrid's hut",
+            "extra_class": "quiz__antwoordButton",
+            "punten": 0
+        },
+        {
+            "vraag": "",
+            "antwoord": "The room of requirement",
+            "extra_class": "quiz__antwoordButton",
+            "punten": 5
+        }
+    ]
+}

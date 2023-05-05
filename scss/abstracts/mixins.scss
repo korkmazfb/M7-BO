@@ -1,47 +1,79 @@
 @use"./colors.scss";
+@use"./vars.scss";
 
-@mixin Primairy_Default{
+@mixin Primairy_Default {
     font-size: 2.08rem;
     color: colors.$text_white;
     background: colors.$dark_purple ;
     width: max-content;
-    padding: 2rem 5rem;
-    border-radius: 8%;
+    min-width: 25rem;
+    max-width: 27rem;
+    padding: 2rem;
+    border-radius: 0.75rem;
     border: none;
     transition: 0.2s;
     cursor: pointer;
 
-    &:hover{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.6rem;
+
+    &:hover {
         font-size: 2.08rem;
         color: colors.$text_white;
         background: colors.$light_purple ;
         width: max-content;
-        padding: 2rem 5rem;
-        border-radius: 8%;
+        padding: 2rem;
+        border-radius: 0.75rem;
         border: none;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 1.6rem;
 
     }
 }
 
-@mixin Secondary_Default{
+@mixin Secondary_Default {
     font-size: 2.08rem;
     color: colors.$dark_purple;
     background: colors.$text_white ;
     border: 0.5rem solid colors.$dark_purple;
     width: max-content;
     padding: 2rem 5rem;
-    border-radius: 8%;
+    border-radius: 0.75rem;
     transition: 0.2s;
-    
-    &:hover{
+
+    &:hover {
         font-size: 2.08rem;
         color: colors.$light_purple;
         background: colors.$text_white ;
         border: 0.5rem solid colors.$light_purple;
         width: max-content;
         padding: 2rem 5rem;
-        border-radius: 8%;
+        border-radius: 0.75rem;
         filter: grayscale(30%);
-    
+
+    }
+}
+
+@mixin Circle_Default {
+    border-radius: 50%;
+    font-size: 3rem;
+    width: 5rem;
+    height: 5rem;
+    background: colors.$dark_purple;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    box-shadow: vars.$box-shadow;
+
+    &:hover {
+        color: colors.$text_white;
+        background: colors.$light_purple ;
+        filter: grayscale(30%);
     }
 }

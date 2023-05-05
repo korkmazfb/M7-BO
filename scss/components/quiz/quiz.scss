@@ -1,0 +1,309 @@
+@use "../../abstracts/vars.scss";
+@use "../../abstracts/colors.scss";
+@use "../../abstracts/mixins.scss";
+
+.quiz {
+    background: white;
+    display: flex;
+    flex-direction: column-reverse;
+    padding-left: 4rem;
+    max-width: 150rem;
+    width: 100%;
+    min-height: calc(100vh - map-get(vars.$vhCalc, "heightOfHeader") - map-get(vars.$vhCalc, "paddingOfBody"));
+
+
+    &__section {
+
+        display: flex;
+
+        &--left {
+            flex-direction: row;
+            position: relative;
+            justify-content: space-evenly;
+            align-items: center;
+            height: 70%;
+        }
+
+
+    }
+
+    &__header {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        justify-content: space-between;
+
+        &>div {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+    }
+
+
+    &__money {
+        font-weight: 400;
+        font-size: 250%;
+    }
+
+    &__logo {
+        @include mixins.Circle_Default;
+        cursor: pointer;
+    }
+
+    &__number {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    &__QandAs {
+        padding: 2rem;
+        list-style: none;
+        padding-top: 5rem;
+        display: flex;
+        gap: 2rem;
+        overflow: hidden;
+        flex-wrap: wrap;
+        width: 60rem;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    &__QandA {
+        display: flex;
+        align-items: center;
+        font-size: 120%;
+        justify-content: center;
+        position: relative;
+        padding-bottom: 0.5rem;
+
+
+
+
+    }
+
+    &__vraag {
+        font-weight: 600;
+        font-size: 275%;
+    }
+
+    &__geenButton {
+        display: none;
+    }
+
+    &__antwoordButton {
+        @include mixins.Primairy_Default;
+
+
+
+        &--select {
+            @include mixins.Secondary_Default;
+            
+        }
+
+    }
+
+    &__amount {
+        font-weight: 300;
+        font-size: 120%;
+    }
+
+    &__transferButton {
+        background: colors.$dark_purple;
+        font-size: 100%;
+        border: none;
+        padding: 1rem;
+        margin-top: 2rem;
+        color: white;
+        border-radius: 0.5rem;
+        box-shadow: vars.$box-shadow;
+        transition: 0.4s all;
+
+        &:hover {
+            cursor: pointer;
+            background: white;
+            color: colors.$text_black;
+            box-shadow: inset 0 0 0 0.2rem colors.$dark_purple;
+
+
+        }
+
+    }
+
+    &__switchAccount {
+        background: none;
+        border: none;
+    }
+
+    &__vragen {
+        list-style: none;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        width: 100%;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    &__vraag {
+        display: flex;
+        align-items: center;
+    }
+
+
+
+    &__volgendeButton {
+
+        display: none;
+
+        &--show {
+            @include mixins.Circle_Default;
+        }
+    }
+
+
+}
+
+.quizOnclick {
+
+    max-width: 150rem;
+    width: 100%;
+    min-height: calc(100vh - map-get(vars.$vhCalc, "heightOfHeader") - map-get(vars.$vhCalc, "paddingOfBody"));
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    &--section {
+        display: none;
+    }
+
+    &--img{
+        z-index: 1;
+        width: 30rem;
+        height: 30rem;
+        opacity: 0;
+
+        animation: House 0.8s forwards;
+        animation-delay: 3s;
+
+        @keyframes House {
+            from{
+                opacity: 0;
+                transform: translateY(-5rem);
+            }
+            to{
+                opacity: 1;
+                transform: translateY(0rem);
+            }
+        }
+    }
+
+    &--text{
+        font-size: 500%;
+        font-weight: 700;
+        opacity: 0;
+
+        animation: House 0.8s forwards;
+        animation-delay: 3s;
+
+        @keyframes House {
+            from{
+                opacity: 0;
+                transform: translateY(-5rem);
+            }
+            to{
+                opacity: 1;
+                transform: translateY(0rem);
+            }
+        }
+    }
+
+    &--yellow {
+        animation: backgroundY 3s forwards;
+
+        @keyframes backgroundY {
+            0%{
+                background: yellow;
+            }
+            25%{
+                background: green;
+            }
+            50%{
+                background: red;
+            }
+            75%{
+                background: blue;
+            }
+            100%{background: yellow;}
+        }
+    }
+
+    &--green {
+        animation: backgroundG 3s forwards;
+
+        @keyframes backgroundG {
+            0%{
+                background: red;
+            }
+            25%{
+                background: green;
+            }
+            50%{
+                background: yellow;
+            }
+            75%{
+                background: blue;
+            }
+            100%{background: green;}
+        }
+    }
+
+    &--blue {
+        animation: backgroundB 3s forwards;
+
+        @keyframes backgroundB {
+            0%{
+                background: green;
+            }
+            25%{
+                background: red;
+            }
+            50%{
+                background: blue;
+            }
+            75%{
+                background: yellow;
+            }
+            100%{background: blue;}
+        }
+    }
+
+    &--red {
+        animation: backgroundR 3s forwards;
+
+        @keyframes backgroundR {
+            0%{
+                background: yellow;
+            }
+            25%{
+                background: red;
+            }
+            50%{
+                background: blue;
+            }
+            75%{
+                background: green;
+            }
+            100%{background: red;}
+        }
+    }
+}
+
+.undefined {
+    display: none;
+}
