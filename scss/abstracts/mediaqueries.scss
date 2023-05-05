@@ -1,33 +1,34 @@
 @media screen and (max-width: 28.125rem) {
 
-    .header{
+    .header {
         height: 12rem;
 
-        &__text{
+        &__text {
             font-size: 150%;
         }
     }
 
-    .quiz{
-    display: block;
-    padding: 1.5rem;
+    .quiz {
+        display: block;
+        padding: 1.5rem;
 
-    &__section--left{
-        height: 92.5%;
-        flex-direction: column;
-    }
-    &__logo{
-        width: 3.5rem;
-        height: 3.5rem;
-    }
-    &__number{
-        width: 5rem;
-        height: 5rem;
-    }
+        &__section--left {
+            height: 92.5%;
+            flex-direction: column;
+        }
 
-    &__QandAs{
-        width: 100%;
-    }
+        &__logo {
+            width: 3.5rem;
+            height: 3.5rem;
+        }
+
+        &__number {
+            width: 5rem;
+            height: 5rem;
+        }
+
+        &__QandAs {
+            width: 100%;
+        }
     }
 }
-    
